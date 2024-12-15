@@ -1,0 +1,28 @@
+@use '../../styles/shared/variables' as *;
+
+.banner_container {
+    @include set-container-px();
+    padding-bottom: 20px;
+    height: 984px;
+
+    .banner_background {
+        @include set-background-image('../../../public/images/chrysanthemum.jpg', center, cover, 100%);
+
+        .banner_name {
+            @include set-flex($justify: end, $flow: column);
+            @include set-sizes($height: 568px);
+            @include set-color(white, background-color);
+            mix-blend-mode: screen;
+
+            .banner_name_first {
+                margin-left: 58px;
+                @include set-typography-merienda();
+            }
+
+            .banner_name_second {
+                @include set-relative($left: -5px);
+                @include set-typography(large, semibold);
+            }
+        }
+    }
+}

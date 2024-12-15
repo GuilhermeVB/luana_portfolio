@@ -1,0 +1,38 @@
+@use 'colors' as *;
+
+$font-weights: (
+    bold: 700,
+    semibold: 600,
+    regular: 400,
+    light: 300
+);
+
+$typography-sizes: (
+    large: (356.88px, .74),
+    heading-1: (36px, 46.8px),
+    heading-2: (32px, 41.6px),
+    heading-3: (24px, 31.2px),
+    heading-4: (20px, 26px),
+    heading-5: (16px, 20.8px),
+    body: (15px, 19.5px),
+    caption: (14px, 18.2px),
+    small: (13px, 16.9px),
+    small-2: (12px, 15.6px)
+);
+
+
+@mixin set-typography($type, $weight: regular, $color: black) {
+    $size-line: map-get($typography-sizes, $type);
+    font-size: nth($size-line, 1);
+    line-height: nth($size-line, 2);
+    font-weight: map-get($font-weights, $weight);
+    @include set-color($color);
+}
+
+@mixin set-typography-merienda($color: black) {
+    font-family: 'Merienda', serif;
+    font-weight: 400;
+    font-size: 128px;
+    line-height: 184.83px;
+    @include set-color(black);
+}

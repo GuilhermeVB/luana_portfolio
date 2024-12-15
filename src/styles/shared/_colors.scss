@@ -1,0 +1,17 @@
+$color-palette: (
+    black: #000000,
+    cursed-black: #131313,
+    nero: #262626,
+    dead-pixel: #3A3A3A,
+    thunder: #4D4D4D,
+    kettleman: #606060,
+    mithril: #878787,
+    hydrargyrum: #9A9A9A,
+    robo-master: #ADADAD,
+    white: #FFFFFF,
+    transparent: transparent
+);
+
+@mixin set-color($color, $property: 'color') {
+    #{$property}: map-get($color-palette, $color);
+}

@@ -1,0 +1,10 @@
+@use '../../styles/shared/variables' as *;
+
+.button_container {
+    @include set-button();
+    @include set-typography(heading-4, semibold, white);
+
+    &:hover {
+        cursor: pointer;
+    }
+}

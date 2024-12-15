@@ -1,0 +1,42 @@
+@use '../../styles/shared/variables' as *;
+
+.header_container {
+    @include set-container-px();
+
+    .header {
+        @include set-flex(space-between);
+        @include set-border('bottom');
+        padding: 20px 0;
+
+        .header_logo {
+            @include set-flex($align: center, $gap: 20px);
+
+            .header_logo_icon {
+                @include set-sizes(56px);
+                @include set-color(black);
+            }
+
+            .header_logo_heading {
+                @include set-typography(heading-4, semibold);
+            }
+        }
+    }
+
+    .subheader {
+        @include set-flex(space-between);
+        padding: 10px 0;
+
+        .subheader_text {
+            @include set-typography(heading-4);
+        }
+
+        .subheader_behance {
+            @include set-flex($align: center, $gap: 12px);
+
+            .subheader_behance_icon {
+                @include set-sizes(12px);
+                @include set-color(black);
+            }
+        }
+    }
+}
