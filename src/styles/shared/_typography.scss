@@ -9,6 +9,7 @@ $font-weights: (
 
 $typography-sizes: (
     large: (356.88px, .74),
+    large-2: (107.28px, 139.47px),
     heading-1: (36px, 46.8px),
     heading-2: (32px, 41.6px),
     heading-3: (24px, 31.2px),
@@ -35,4 +36,9 @@ $typography-sizes: (
     font-size: 128px;
     line-height: 184.83px;
     @include set-color(black);
+}
+
+@mixin set-typography-layout($transform: none, $stroke: 0) {
+    text-transform: $transform;
+    -webkit-text-stroke: $stroke;
 }

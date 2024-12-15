@@ -33,6 +33,10 @@
         .subheader_behance {
             @include set-flex($align: center, $gap: 12px);
 
+            &:hover {
+                cursor: pointer;
+            }
+
             .subheader_behance_icon {
                 @include set-sizes(12px);
                 @include set-color(black);

@@ -10,9 +10,9 @@ export const Header = () => {
       <div className={styles.header}>
         <div className={styles.header_logo}>
           <LogoIcon className={styles.header_logo_icon} />
-          <h4 className={styles.header_logo_heading}>
+          <span className={styles.header_logo_heading}>
             Luana Almeida
-          </h4>
+          </span>
         </div>
         <Button />
       </div>

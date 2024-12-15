@@ -2,11 +2,11 @@
 
 .banner_container {
     @include set-container-px();
+    @include set-sizes($height: 984px);
     padding-bottom: 20px;
-    height: 984px;
 
     .banner_background {
-        @include set-background-image('../../../public/images/chrysanthemum.jpg', center, cover, 100%);
+        @include set-background-image('../../assets/images/chrysanthemum.jpg', center, cover, 100%);
 
         .banner_name {
             @include set-flex($justify: end, $flow: column);
