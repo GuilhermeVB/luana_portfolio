@@ -1,3 +1,4 @@
+import { About } from './layout/about/About';
 import { Banner } from './layout/banner/Banner';
 import { Cta } from './layout/cta/Cta';
 import { Header } from './layout/header/Header';
@@ -9,6 +10,7 @@ export const App = () => {
       <Header />
       <Banner />
       <Cta />
+      <About />
     </div>
   );
 }

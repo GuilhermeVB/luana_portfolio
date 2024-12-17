@@ -8,8 +8,9 @@ $font-weights: (
 );
 
 $typography-sizes: (
-    large: (356.88px, .74),
+    large-1: (356.88px, .74),
     large-2: (107.28px, 139.47px),
+    large-3: (48px, 62.4px),
     heading-1: (36px, 46.8px),
     heading-2: (32px, 41.6px),
     heading-3: (24px, 31.2px),
@@ -17,7 +18,7 @@ $typography-sizes: (
     heading-5: (16px, 20.8px),
     body: (15px, 19.5px),
     caption: (14px, 18.2px),
-    small: (13px, 16.9px),
+    small-1: (13px, 16.9px),
     small-2: (12px, 15.6px)
 );
 

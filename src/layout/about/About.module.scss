@@ -1,0 +1,62 @@
+@use '../../styles/shared/variables' as *;
+
+.about_container {
+    @include set-flex(space-between, $gap: 10px);
+    @include set-container-px();
+    @include set-sizes($height: 255px);
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .about_titlebox {
+        @include set-flex();
+        @include set-border('right');
+        @include set-sizes(436px);
+
+        .about_titlebox_expander {
+            @include set-flex($align: center, $gap: 24.42px);
+            @include set-sizes(fit-content, fit-content);
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            .about_titlebox_expander_heading {
+                @include set-typography(large-3, semibold);
+            }
+
+            .about_titlebox_expander_icon {
+                @include set-sizes(30px);
+                @include set-color(black);
+            }
+        }
+    }
+
+    .about_content {
+        @include set-flex(center, center);
+        @include set-sizes(1344px);
+
+        .about_content_text {
+            @include set-sizes(1144px, 126px);
+            @include set-typography(heading-5, light);
+        }
+    }
+
+    .about_social {
+        @include set-flex(center, center, 28.75px, column);
+        @include set-border('left');
+        @include set-sizes(80px);
+
+        .about_social_icon {
+            @include set-sizes(33px);
+            @include set-color(black);
+
+            &:nth-child(2) {
+                @include set-sizes(37px);
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

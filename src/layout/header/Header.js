@@ -1,5 +1,5 @@
 import { ReactComponent as LogoIcon } from '../../assets/icons/logo.svg';
-import { ReactComponent as BehanceIcon } from '../../assets/icons/arrow.svg';
+import { ReactComponent as BehanceArrowIcon } from '../../assets/icons/bahance_arrow.svg';
 
 import { Button } from '../../components/button/Button';
 import styles from './Header.module.scss';
@@ -24,7 +24,7 @@ export const Header = () => {
           <span className={styles.subheader_text}>
             Behance
           </span>
-          <BehanceIcon className={styles.subheader_behance_icon} />
+          <BehanceArrowIcon className={styles.subheader_behance_icon} />
         </div>
       </div>
     </header>
