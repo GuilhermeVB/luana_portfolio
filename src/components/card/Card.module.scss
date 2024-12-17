@@ -1,0 +1,33 @@
+@use '../../styles/shared/variables' as *;
+
+.card_container {
+    flex: 1;
+    @include set-flex(space-between, center, $flow: column);
+    @include set-sizes($height: 788px);
+
+    &:not(:last-child) {
+        @include set-border('right');
+    }
+
+    .card {
+        @include set-flex(space-between, $gap: 7.5px, $flow: column);
+        @include set-sizes(100%);
+        padding: 0 10px;
+
+        .card_image {
+            @include set-sizes(100%);
+        }
+
+        .card_info {
+            @include set-flex(space-between);
+
+            .card_info_name {
+                @include set-typography(small-2, light);
+            }
+
+            .card_info_year {
+                @include set-typography(small-2, meddium);
+            }
+        }
+    }
+}

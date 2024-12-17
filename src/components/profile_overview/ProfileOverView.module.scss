@@ -1,83 +1,108 @@
 @use '../../styles/shared/variables' as *;
 
-.overview_titlebox {
-    @include set-flex();
-    @include set-sizes(436px);
+.overview_container {
+    @include set-flex(space-between, $gap: 10px);
+    @include set-container-px();
+    padding-top: 50px;
+    padding-bottom: 50px;
 
-    .overview_titlebox_expander {
-        @include set-flex($align: center, $gap: 24.42px);
-        @include set-sizes(fit-content, fit-content);
+    .overview_titlebox {
+        @include set-flex();
+        @include set-sizes(436px);
 
-        &:hover {
-            cursor: pointer;
-        }
+        .overview_titlebox_expander {
+            @include set-flex($align: center, $gap: 24.42px);
+            @include set-sizes(fit-content, fit-content);
 
-        .overview_titlebox_expander_heading {
-            @include set-typography(large-3, semibold);
-        }
+            &:hover {
+                cursor: pointer;
+            }
 
-        .overview_titlebox_expander_icon {
-            @include set-sizes(30px);
-            @include set-color(black);
+            .overview_titlebox_expander_heading {
+                @include set-typography(large-3, semibold);
+            }
+
+            .overview_titlebox_expander_icon {
+                @include set-sizes(30px);
+                @include set-color(black);
+            }
         }
     }
-}
 
-.overview_content {
-    @include set-flex(center, center);
-
-    .overview_content_text {
+    .overview_content {
         @include set-flex(center, center);
-        @include set-typography(heading-5, light);
-    }
-}
 
-.overview_social {
-    @include set-flex(center, center, 28.75px, column);
-    @include set-border('left');
-    @include set-sizes(80px);
-
-    .overview_social_icon {
-        @include set-sizes(33px);
-        @include set-color(black);
-
-        &:nth-child(2) {
-            @include set-sizes(37px);
-        }
-
-        &:hover {
-            cursor: pointer;
+        .overview_content_text {
+            @include set-flex(center, center);
+            @include set-typography(heading-5, light);
         }
     }
-}
 
-.overview_copyright {
-    @include set-flex(end, center);
-    @include set-sizes(712px);
+    .overview_social {
+        @include set-flex(center, center, 28.75px, column);
+        @include set-border('left');
+        @include set-sizes(80px);
 
-    .overview_copyright_text {
-        @include set-typography(heading-2, semibold);
-        margin-right: 18.82%;
+        .overview_social_icon {
+            @include set-sizes(33px);
+            @include set-color(black);
+
+            &:nth-child(2) {
+                @include set-sizes(37px);
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .overview_copyright {
+        @include set-flex(end, center);
+        @include set-sizes(712px);
+
+        .overview_copyright_text {
+            @include set-typography(heading-2, semibold);
+            margin-right: 18.82%;
+        }
     }
 }
 
-/* SPECIFICATIONS */
+/* SECTIONS */
 
-.about-content-w {
-    width: 1344px;
-    .about-text-w {
-        max-width: 1144px;
+.about_container {
+    min-height: 255px;
+
+    .about-content-w {
+        width: 1344px;
+
+        .about-text-w {
+            max-width: 1144px;
+        }
     }
 }
 
-.projects-content-w {
-    width: 712px;
-    justify-content: end;
-    .projects-text-w {
-        max-width: 612px;
+.projects_container {
+    min-height: 268px;
+
+    .projects-content-w {
+        width: 712px;
+        justify-content: end;
+
+        .projects-text-w {
+            max-width: 612px;
+        }
     }
+}
+
+.services_container {
+    height: 162px;
 }
 
 .border-r {
     @include set-border('right');
+}
+
+.border-b {
+    @include set-border('bottom');
 }

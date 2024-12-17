@@ -3,9 +3,9 @@ import { ReactComponent as DropDownIcon } from '../../assets/icons/drop_down.svg
 
 import styles from './ProfileOverView.module.scss';
 
-export const ProfileOverView = ({ title, borderRight, text, socialMedia, copyRight }) => {
+export const ProfileOverView = ({ title, borderBottom, borderRight, text, socialMedia, copyRight }) => {
     return (
-        <>
+        <section className={`${styles.overview_container} ${styles[`${title.toLowerCase()}_container`]} ${borderBottom && styles['border-b']}`}>
             <div className={`${styles.overview_titlebox} ${borderRight && styles['border-r']}`}>
                 <div className={styles.overview_titlebox_expander}>
                     <h2 className={styles.overview_titlebox_expander_heading}>
@@ -41,11 +41,11 @@ export const ProfileOverView = ({ title, borderRight, text, socialMedia, copyRig
                 copyRight && (
                     <div className={styles.overview_copyright}>
                         <span className={styles.overview_copyright_text}>
-                            &copy; 2022 - 2024
+                            &copy; 2022 - 2025
                         </span>
                     </div>
                 )
             }
-        </>
+        </section>
     );
 }

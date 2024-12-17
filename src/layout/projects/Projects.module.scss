@@ -1,9 +1,8 @@
 @use '../../styles/shared/variables' as *;
 
-.projects_container {
-    @include set-flex(space-between, $gap: 10px);
+.project_cards {
+    @include set-flex();
     @include set-container-px();
     padding-top: 50px;
     padding-bottom: 50px;
-    min-height: 268px;
 }
