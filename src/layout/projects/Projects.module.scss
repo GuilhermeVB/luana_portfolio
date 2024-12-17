@@ -1,9 +1,9 @@
 @use '../../styles/shared/variables' as *;
 
-.about_container {
+.projects_container {
     @include set-flex(space-between, $gap: 10px);
     @include set-container-px();
     padding-top: 50px;
     padding-bottom: 50px;
-    min-height: 255px;
+    min-height: 268px;
 }
