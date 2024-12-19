@@ -2,7 +2,6 @@
 
 .overview_container {
     @include set-flex(space-between, $gap: 10px);
-    @include set-container-px();
     padding-top: 50px;
     padding-bottom: 50px;
 
@@ -14,12 +13,8 @@
             @include set-flex($align: center, $gap: 24.42px);
             @include set-sizes(fit-content, fit-content);
 
-            &:hover {
-                cursor: pointer;
-            }
-
             .overview_titlebox_expander_heading {
-                @include set-typography(large-3, semibold);
+                @include set-typography(large-4, semibold);
             }
 
             .overview_titlebox_expander_icon {
@@ -70,7 +65,7 @@
 
 /* SECTIONS */
 
-.about_container {
+.about_overview_container {
     min-height: 255px;
 
     .about-content-w {
@@ -82,7 +77,7 @@
     }
 }
 
-.projects_container {
+.projects_overview_container {
     min-height: 268px;
 
     .projects-content-w {
@@ -95,7 +90,7 @@
     }
 }
 
-.services_container {
+.services_overview_container {
     height: 162px;
 }
 

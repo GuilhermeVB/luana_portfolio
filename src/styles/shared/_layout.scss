@@ -12,9 +12,8 @@
     @include set-color(black, border-color);
 }
 
-@mixin set-button($radius: 200px, $padding-y: 5px, $padding-x: 20px) {
-    @include set-color(black, background-color);
-    border-radius: $radius;
+@mixin set-button($padding-y, $padding-x) {
+    border-radius: 200px;
     padding: $padding-y $padding-x;
 }
 

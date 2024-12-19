@@ -9,7 +9,7 @@
         @include set-flex(center, center);
 
         .cta_heading {
-            @include set-typography(large-2, semibold, white);
+            @include set-typography(large-3, semibold, white);
             @include set-typography-layout(uppercase, 1.91px);
         }
     }

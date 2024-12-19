@@ -12,6 +12,10 @@ $color-palette: (
     transparent: transparent
 );
 
-@mixin set-color($color, $property: 'color') {
+@mixin set-color($color, $property: 'color', $bothProperty: null) {
     #{$property}: map-get($color-palette, $color);
+
+    @if $bothProperty !=null {
+        background-color: map-get($color-palette, $bothProperty);
+    }
 }

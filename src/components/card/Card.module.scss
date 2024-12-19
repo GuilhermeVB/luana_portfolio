@@ -1,9 +1,8 @@
 @use '../../styles/shared/variables' as *;
 
 .card_container {
+    @include set-flex(space-between, center, 216px, column);
     flex: 1;
-    @include set-flex(space-between, center, $flow: column);
-    @include set-sizes($height: 788px);
 
     &:not(:last-child) {
         @include set-border('right');
@@ -30,4 +29,14 @@
             }
         }
     }
+}
+
+/* SINGLE CARDS */
+
+.card-first-mt {
+    margin-top: 70.112%;
+}
+
+.card-second-mt {
+    margin-top: 33.46%;
 }

@@ -1,5 +1,6 @@
 import { About } from './layout/about/About';
 import { Banner } from './layout/banner/Banner';
+import { Contact } from './layout/contact/Contact';
 import { Cta } from './layout/cta/Cta';
 import { Header } from './layout/header/Header';
 import { Projects } from './layout/projects/Projects';
@@ -15,6 +16,7 @@ export const App = () => {
       <About />
       <Projects />
       <Services />
+      <Contact />
     </div>
   );
 }

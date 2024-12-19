@@ -1,10 +1,26 @@
 @use '../../styles/shared/variables' as *;
 
 .button_container {
-    @include set-button();
+    @include set-flex($gap: 10px);
     @include set-typography(heading-4, semibold, white);
 
     &:hover {
         cursor: pointer;
     }
+
+    .button_icon {
+        @include set-sizes(30.06px);
+    }
+}
+
+/* PROPS */
+
+.b-black {
+    @include set-button(5px, 20px);
+    @include set-color(black, background-color);
+}
+
+.b-white {
+    @include set-button(15px, 50px);
+    @include set-color(black, $bothProperty: white);
 }

@@ -14,7 +14,7 @@ export const Header = () => {
             Luana Almeida
           </span>
         </div>
-        <Button />
+        <Button text="Get in touch" buttonType="b-black" />
       </div>
       <div className={styles.subheader}>
         <span className={styles.subheader_text}>

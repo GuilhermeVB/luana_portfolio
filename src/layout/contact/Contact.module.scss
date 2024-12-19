@@ -1,0 +1,27 @@
+@use '../../styles/shared/variables' as *;
+
+.contact_container {
+    @include set-background-image('../../assets/images/white_flower.png', left, cover, 100vh);
+    @include set-flex($flow: column);
+
+    .contact_content {
+        @include set-flex(center, center, 10px, column);
+        @include set-sizes(64.84375%, 100%);
+        align-self: end;
+        
+        .contact_content_heading {
+            @include set-typography-merienda(white);
+            @include set-sizes(fit-content);
+        }
+    }
+
+    .contact_footer {
+        @include set-flex(center, center);
+        @include set-sizes($height: 66px);
+
+        .contact_footer_copy {
+            @include set-typography(heading-4, semibold, white);
+            opacity: .3;
+        }
+    }
+}

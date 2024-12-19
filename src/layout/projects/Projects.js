@@ -11,7 +11,7 @@ import styles from './Projects.module.scss';
 
 export const Projects = () => {
     return (
-        <>
+        <section className={styles.projects_container}>
             <ProfileOverView
                 title="Projects"
                 borderBottom
@@ -20,29 +20,25 @@ export const Projects = () => {
                 copyRight
             />
             <div className={styles.project_cards}>
-                <Card imageData=
-                    {[
-                        { path: radioHead, name: "OK Computer", year: "2024" },
-                        { path: tattoArtist, name: "Tatto Artist", year: "2023" }
-                    ]}
+                <Card imageData={[
+                    { path: radioHead, name: "OK Computer", year: "2024" },
+                    { path: tattoArtist, name: "Tatto Artist", year: "2023" }
+                ]}
                 />
-                <Card imageData=
-                    {[
-                        { path: natureBeauty, name: "Nature Beauty", year: "2023" }
-                    ]}
+                <Card imageData={[
+                    { path: natureBeauty, name: "Nature Beauty", year: "2023" }
+                ]} firstVerticalAlign
                 />
-                <Card imageData=
-                    {[
-                        { path: signalis, name: "Signalis", year: "2023" }
-                    ]}
+                <Card imageData={[
+                    { path: signalis, name: "Signalis", year: "2023" }
+                ]} secondVerticalAlign
                 />
-                <Card imageData=
-                    {[
-                        { path: artemiaMoveis, name: "Artêmia Móveis", year: "2024" },
-                        { path: sugarFantasy, name: "Sugar Fanasy", year: "2022" }
-                    ]}
+                <Card imageData={[
+                    { path: artemiaMoveis, name: "Artêmia Móveis", year: "2024" },
+                    { path: sugarFantasy, name: "Sugar Fanasy", year: "2022" }
+                ]}
                 />
             </div>
-        </>
+        </section>
     );
 }

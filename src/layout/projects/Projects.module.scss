@@ -1,8 +1,12 @@
 @use '../../styles/shared/variables' as *;
 
-.project_cards {
-    @include set-flex();
+
+.projects_container {
     @include set-container-px();
-    padding-top: 50px;
-    padding-bottom: 50px;
+
+    .project_cards {
+        @include set-flex();
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
 }

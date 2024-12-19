@@ -10,8 +10,9 @@ $font-weights: (
 
 $typography-sizes: (
     large-1: (356.88px, .74),
-    large-2: (107.28px, 139.47px),
-    large-3: (48px, 62.4px),
+    large-2: (128px, 166.4px),
+    large-3: (107.28px, 139.47px),
+    large-4: (48px, 62.4px),
     heading-1: (36px, 46.8px),
     heading-2: (32px, 41.6px),
     heading-3: (24px, 31.2px),
@@ -37,7 +38,7 @@ $typography-sizes: (
     font-weight: 400;
     font-size: 128px;
     line-height: 184.83px;
-    @include set-color(black);
+    @include set-color($color);
 }
 
 @mixin set-typography-layout($transform: none, $stroke: 0) {

@@ -1,0 +1,5 @@
+@use '../../styles/shared/variables' as *;
+
+.about_container {
+    @include set-container-px();
+}

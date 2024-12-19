@@ -1,0 +1,25 @@
+@use '../../styles/shared/variables' as *;
+
+.topic_container {
+    @include set-flex(space-between, center);
+    @include set-sizes($height: 186px);
+
+    .topic_number {
+        @include set-typography(heading-5, semibold);
+    }
+
+    .topic_title {
+        @include set-typography(large-2, semibold);
+        text-transform: uppercase;
+    }
+
+    .topic_icon {
+        @include set-sizes(30px);
+        @include set-color(black);
+        transform: rotate(45deg);
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
