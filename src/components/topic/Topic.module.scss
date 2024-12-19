@@ -4,6 +4,10 @@
     @include set-flex(space-between, center);
     @include set-sizes($height: 186px);
 
+    &:not(:last-child) {
+        @include set-border('bottom');
+    }
+
     .topic_number {
         @include set-typography(heading-5, semibold);
     }
