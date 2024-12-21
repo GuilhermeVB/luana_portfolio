@@ -1,5 +1,10 @@
 @use '../../styles/shared/variables' as *;
 
 .services_container {
+    @include set-flex($flow: column);
     @include set-container-px();
+
+    .services_list {
+        @include set-flex($flow: column);
+    }
 }

@@ -21,6 +21,11 @@
 }
 
 .b-white {
+    @include set-button(5px, 20px);
+    @include set-color(black, $bothProperty: white);
+}
+
+.b-white-alt {
     @include set-button(15px, 50px);
     @include set-color(black, $bothProperty: white);
 }

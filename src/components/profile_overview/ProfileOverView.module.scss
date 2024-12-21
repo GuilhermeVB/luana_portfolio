@@ -97,7 +97,3 @@
 .border-r {
     @include set-border('right');
 }
-
-.border-b {
-    @include set-border('bottom');
-}

@@ -15,8 +15,8 @@
             mix-blend-mode: screen;
             
             .banner_name_first {
-                margin-left: 58px;
                 @include set-typography-merienda();
+                margin-left: 58px;
             }
 
             .banner_name_second {

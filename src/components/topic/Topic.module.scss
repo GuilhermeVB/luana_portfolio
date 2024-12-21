@@ -3,27 +3,65 @@
 .topic_container {
     @include set-flex(space-between, center);
     @include set-sizes($height: 186px);
+    @include set-border('top');
+    transition: .5s ease-in-out;
 
-    &:not(:last-child) {
-        @include set-border('bottom');
+    &:hover {
+        cursor: pointer;
     }
 
     .topic_number {
         @include set-typography(heading-5, semibold);
+        transition: .5s ease-in-out;
     }
 
-    .topic_title {
-        @include set-typography(large-2, semibold);
-        text-transform: uppercase;
+    .topic_content {
+        @include set-flex(center, center, 10px, column);
+
+        .topic_content_title {
+            @include set-typography(large-2, semibold);
+            text-transform: uppercase;
+            transition: .5s ease-in-out;
+        }
+
+        .topic_content_info {
+            @include set-flex(center, center, 20px, column);
+
+            .topic_content_info_paragraph {
+                @include set-typography(heading-5, light, white);
+                text-align: center;
+                max-width: 814px;
+            }
+        }
     }
 
     .topic_icon {
         @include set-sizes(30px);
         @include set-color(black);
         transform: rotate(45deg);
+        transition: .5s ease-in-out;
+    }
+}
 
-        &:hover {
-            cursor: pointer;
+/* DROPDOWN */
+
+.topic_container_alt {
+    overflow: hidden;
+    @include set-background-image('../../assets/images/chrysanthemum.jpg', center, cover, 100%, .7);
+    @include set-sizes($height: 415px);
+
+    .topic_number_alt {
+        @include set-color(white);
+    }
+
+    .topic_content {
+        .topic_content_title_alt {
+            @include set-color(white);
         }
+    }
+
+    .topic_icon_alt {
+        @include set-color(white);
+        transform: rotate(-135deg);
     }
 }

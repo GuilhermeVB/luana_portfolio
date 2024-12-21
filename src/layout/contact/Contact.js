@@ -8,7 +8,7 @@ export const Contact = () => {
                 <h2 className={styles.contact_content_heading}>
                     Let’s Connect
                 </h2>
-                <Button text="Contact Me" buttonType="b-white" logo />
+                <Button text="Contact Me" buttonType="b-white-alt" logo />
             </div>
             <footer className={styles.contact_footer}>
                 <span className={styles.contact_footer_copy}>
