@@ -5,7 +5,7 @@ import styles from './Services.module.scss';
 export const Services = () => {
     return (
         <section className={styles.services_container}>
-            <ProfileOverView title="Services" />
+            <ProfileOverView title="Services" borderBottom />
             <div className={styles.services_list}>
                 <Topic
                     number="01"

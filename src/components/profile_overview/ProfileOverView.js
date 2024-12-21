@@ -1,11 +1,11 @@
-import React from 'react';
 import { ReactComponent as DropDownIcon } from '../../assets/icons/drop_down.svg';
+import React from 'react';
 
 import styles from './ProfileOverView.module.scss';
 
-export const ProfileOverView = ({ title, borderRight, text, socialMedia, copyRight }) => {
+export const ProfileOverView = ({ title, borderRight, borderBottom, text, socialMedia, copyRight }) => {
     return (
-        <section className={`${styles.overview_container} ${styles[`${title.toLowerCase()}_overview_container`]}`}>
+        <section className={`${styles.overview_container} ${styles[`${title.toLowerCase()}_overview_container`]}  ${borderBottom && styles['border-b']}`}>
             <div className={`${styles.overview_titlebox} ${borderRight && styles['border-r']}`}>
                 <div className={styles.overview_titlebox_expander}>
                     <h2 className={styles.overview_titlebox_expander_heading}>

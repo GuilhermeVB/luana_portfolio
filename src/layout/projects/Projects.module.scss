@@ -7,7 +7,6 @@
     .project_cards {
         @include set-background-image('../../assets/images/projects.png', center, 90.6% 100%, fit-content);
         @include set-flex();
-        @include set-border('top');
         padding-top: 50px;
         padding-bottom: 50px;
     }

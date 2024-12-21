@@ -91,9 +91,14 @@
 }
 
 .services_overview_container {
+    @include set-container-px('margin');
     height: 162px;
 }
 
 .border-r {
     @include set-border('right');
+}
+
+.border-b {
+    @include set-border('bottom');
 }
