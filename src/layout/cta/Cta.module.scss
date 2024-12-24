@@ -1,10 +1,12 @@
 @use '../../styles/shared/variables' as *;
+@use '../../styles/config/responsivities' as *;
 
 .cta_container {
     @include set-color(black, background-color);
     @include set-sizes($height: 100vh);
 
     .cta_background {
+        @include set-relative();
         @include set-background-image('../../assets/images/marfie_crisantemoq.png', center, contain, 100%);
         @include set-flex(center, center);
 
@@ -12,5 +14,15 @@
             @include set-typography(large-3, semibold, white);
             @include set-typography-layout(uppercase, 1.91px);
         }
+
+        .cta_brief {
+            @include set-absolute(92px, 77px);
+            @include set-typography(heading-5, regular, white);
+            @include set-sizes(280px);
+        }
     }
 }
+
+/* RESPONSIVENESS */
+
+@include responsive-priority();

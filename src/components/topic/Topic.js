@@ -1,19 +1,12 @@
 import { ReactComponent as DropDownIcon } from '../../assets/icons/drop_down.svg';
-import { useState } from 'react';
 
 import { Button } from '../button/Button';
 import styles from './Topic.module.scss';
 
-export const Topic = ({ number, title, paragraph, defaultActivation }) => {
-    const [dropDownActivated, setDropDownActivated] = useState(defaultActivation ? true : false);
-
-    function dropDownToggle() {
-        setDropDownActivated(!dropDownActivated);
-    }
-
+export const Topic = ({ number, title, paragraph, dropDownActivated, dropDownToggle }) => {
     return (
-        <div className={`${styles.topic_background} ${dropDownActivated && styles['topic_background_alt']}`} onClick={dropDownActivated ? dropDownToggle : null}>
-            <div className={`${styles.topic_container} ${dropDownActivated && styles['topic_container_alt']}`} onClick={dropDownActivated ? null : dropDownToggle}>
+        <div className={`${styles.topic_background} ${dropDownActivated && styles['topic_background_alt']}`} onClick={dropDownActivated ? () => dropDownToggle(Number(number - 1)) : null}>
+            <div className={`${styles.topic_container} ${dropDownActivated && styles['topic_container_alt']}`} onClick={dropDownActivated ? null : () => dropDownToggle(Number(number - 1))}>
                 <span className={`${styles.topic_number} ${dropDownActivated && styles['topic_number_alt']}`}>
                     {number}
                 </span>
@@ -32,6 +25,6 @@ export const Topic = ({ number, title, paragraph, defaultActivation }) => {
                 </div>
                 <DropDownIcon className={`${styles.topic_icon} ${dropDownActivated && styles['topic_icon_alt']}`} />
             </div>
-        </div>
+        </div >
     );
 }

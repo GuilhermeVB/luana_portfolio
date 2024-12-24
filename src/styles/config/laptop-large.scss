@@ -1,0 +1,127 @@
+@use '../../styles/shared/variables' as *;
+
+@mixin responsive-laptop-large() {
+    @media (min-width: 1024px) and (max-width: 1440px) {
+
+        /* BANNER */
+
+        .banner_container {
+            @include set-sizes($height: 756px);
+
+            .banner_background {
+                .banner_name {
+                    @include set-sizes($height: 452px);
+
+                    .banner_name_first {
+                        @include set-responsive-typography(93.33px, 134.77px);
+                    }
+
+                    .banner_name_second {
+                        @include set-responsive-typography(260.22px, .73);
+                    }
+                }
+            }
+        }
+
+        /* CTA */
+
+        .cta_container {
+            .cta_background {
+                .cta_heading {
+                    @include set-responsive-typography(72px, 93.6px);
+                }
+
+                .cta_brief {
+                    right: 28px;
+                    bottom: 51px;
+                }
+            }
+        }
+
+        /* OVERVIEW */
+
+        .overview_container {
+            .overview_titlebox {
+                @include set-sizes(372px);
+            }
+
+            .overview_copyright {
+                @include set-sizes(209px);
+
+                .overview_copyright_text {
+                    @include set-typography(heading-3, semibold);
+                    margin: 0;
+                }
+            }
+        }
+
+        .about_overview_container {
+            min-height: 289px;
+
+            .about-content-w {
+                @include set-sizes(928px);
+
+                .about-text-w {
+                    @include set-sizes(728px);
+                }
+            }
+        }
+
+        .projects_overview_container {
+            min-height: 226px;
+
+            .projects-content-w {
+                @include set-sizes(800px);
+
+                .projects-text-w {
+                    max-width: 700px;
+                }
+            }
+        }
+
+        /* PROJECTS */
+
+        .projects_container {
+            .project_cards {
+                padding-top: 37.23px;
+            }
+        }
+
+        /* CARD */
+
+        .card_container {
+            gap: 160.68px;
+
+            &:not(:last-child) {
+                border-width: .74px;
+            }
+
+            .card {
+                gap: 5.59px;
+                padding: 0 7.45px;
+
+                .card_info {
+                    .card_info_name {
+                        @include set-responsive-typography(8.94px, 11.62px);
+                    }
+
+                    .card_info_year {
+                        @include set-responsive-typography(8.94px, 11.62px);
+                    }
+                }
+            }
+        }
+
+        /* CONTACT */
+
+        .contact_container {
+            .contact_content {
+                @include set-sizes(765px);
+
+                .contact_content_heading {
+                    @include set-responsive-typography(96px, 138.62px);
+                }
+            }
+        }
+    }
+}

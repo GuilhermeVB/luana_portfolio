@@ -1,4 +1,5 @@
 @use '../../styles/shared/variables' as *;
+@use '../../styles/config/responsivities' as *;
 
 .projects_container {
     @include set-flex($flow: column);
@@ -6,8 +7,12 @@
 
     .project_cards {
         @include set-background-image('../../assets/images/projects.png', center, 90.6% 100%, fit-content);
+        @include set-border('top');
         @include set-flex();
         padding-top: 50px;
-        padding-bottom: 50px;
     }
 }
+
+/* RESPONSIVENESS */
+
+@include responsive-priority();

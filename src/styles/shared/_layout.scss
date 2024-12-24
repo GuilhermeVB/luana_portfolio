@@ -10,8 +10,8 @@
     @include set-sizes(100%, $height);
 }
 
-@mixin set-border($side) {
-    border-#{$side}: 1px solid;
+@mixin set-border($side, $width: 1px) {
+    border-#{$side}: $width solid;
     @include set-color(black, border-color);
 }
 
@@ -26,6 +26,12 @@
     align-items: $align;
     gap: $gap;
     flex-flow: $flow;
+}
+
+@mixin set-absolute($right: 0, $bottom: 0) {
+    position: absolute;
+    right: $right;
+    bottom: $bottom;
 }
 
 @mixin set-relative($top: 0, $left: 0) {

@@ -45,3 +45,8 @@ $typography-sizes: (
     text-transform: $transform;
     -webkit-text-stroke: $stroke;
 }
+
+@mixin set-responsive-typography($size, $height) {
+    font-size: $size;
+    line-height: $height;
+}

@@ -1,4 +1,5 @@
 @use '../../styles/shared/variables' as *;
+@use '../../styles/config/responsivities' as *;
 
 .banner_container {
     @include set-container-px();
@@ -13,7 +14,7 @@
             @include set-sizes($height: 568px);
             @include set-color(white, background-color);
             mix-blend-mode: screen;
-            
+
             .banner_name_first {
                 @include set-typography-merienda();
                 margin-left: 58px;
@@ -26,3 +27,7 @@
         }
     }
 }
+
+/* RESPONSIVENESS */
+
+@include responsive-priority();

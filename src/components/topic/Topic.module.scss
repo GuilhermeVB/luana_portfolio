@@ -4,12 +4,9 @@
     @include set-flex($flow: column);
     @include set-container-px();
 
-    &:not(:last-child) .topic_container {
-        @include set-border('bottom');
-    }
-
     .topic_container {
         @include set-flex(space-between, center);
+        @include set-border('top');
         @include set-sizes($height: 186px);
         transition: .5s ease-in-out;
 
@@ -64,7 +61,7 @@
     .topic_container_alt {
         @include set-sizes($height: 415px);
         overflow: hidden;
-        border: none !important;
+        border: none;
 
         .topic_number_alt {
             @include set-color(white);

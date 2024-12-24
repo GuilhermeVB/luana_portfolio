@@ -1,14 +1,17 @@
 @use '../../styles/shared/variables' as *;
+@use '../../styles/config/responsivities' as *;
 
 .contact_container {
     @include set-background-image('../../assets/images/white_flower.png', left, cover, 100vh);
+    @include set-color(black, background-color);
     @include set-flex($flow: column);
 
     .contact_content {
         @include set-flex(center, center, 10px, column);
-        @include set-sizes(64.84375%, 100%);
+        @include set-sizes(64.84375%);
+        flex-grow: 1;
         align-self: end;
-        
+
         .contact_content_heading {
             @include set-typography-merienda(white);
             @include set-sizes(fit-content);
@@ -25,3 +28,7 @@
         }
     }
 }
+
+/* RESPONSIVENESS */
+
+@include responsive-priority();

@@ -14,7 +14,6 @@ export const Projects = () => {
         <section className={styles.projects_container}>
             <ProfileOverView
                 title="Projects"
-                borderBottom
                 text={`Welcome to my project showcase! Here, creativity meets functionality through designs that are intuitive, visually striking, and purpose-driven. Each project reflects my dedication to crafting impactful solutions that elevate user experiences.\n
                 Feel free to explore and connect for future collaborations!`}
                 copyRight
