@@ -2,7 +2,7 @@
 @use '../../styles/config/responsivities' as *;
 
 .contact_container {
-    @include set-background-image('../../assets/images/white_flower.png', left, cover, 100vh);
+    @include set-background-image('../../assets/images/white_flower.png', left, cover, 977px);
     @include set-color(black, background-color);
     @include set-flex($flow: column);
 

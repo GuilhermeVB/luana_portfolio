@@ -1,6 +1,11 @@
 @use '../../styles/shared/variables' as *;
+@use '../../styles/config/responsivities' as *;
 
 .about_container {
     @include set-flex($flow: column);
     @include set-container-px();
 }
+
+/* RESPONSIVENESS */
+
+@include responsive-priority();

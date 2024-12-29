@@ -1,4 +1,5 @@
 @use '../../styles/shared/variables' as *;
+@use '../../styles/config/responsivities' as *;
 
 .topic_background {
     @include set-flex($flow: column);
@@ -6,7 +7,6 @@
 
     .topic_container {
         @include set-flex(space-between, center);
-        @include set-border('top');
         @include set-sizes($height: 186px);
         transition: .5s ease-in-out;
 
@@ -49,6 +49,14 @@
     }
 }
 
+/* LINE */
+
+@include set-horizontal-line(true);
+
+.border-hidden {
+    border: none;
+}
+
 /* DROPDOWN */
 
 .topic_background_alt {
@@ -79,3 +87,7 @@
         }
     }
 }
+
+/* RESPONSIVENESS */
+
+@include responsive-priority();

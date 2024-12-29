@@ -1,0 +1,273 @@
+@use '../../styles/shared/variables' as *;
+
+@mixin responsive-laptop() {
+    @media (min-width: 745px) and (max-width: 1024px) {
+
+        /* HEADER */
+
+        .header_container {
+            @include set-container-px(14.22px);
+
+            .header {
+                padding: 14.22px 0;
+
+                button {
+                    padding: 3.56px 14.22px;
+                    margin-bottom: 3px;
+                }
+            }
+
+            .subheader {
+                @include set-flex(space-between);
+                padding: 7.11px 0;
+
+                .subheader_behance {
+                    @include set-flex($gap: 8.53px);
+
+                    .subheader_behance_icon {
+                        @include set-sizes(8.54px);
+                    }
+                }
+            }
+        }
+
+        /* BANNER */
+
+        .banner_container {
+            @include set-sizes($height: 537.6px);
+            @include set-container-px(14.22px);
+            padding-bottom: 14.22px;
+
+            .banner_background {
+                .banner_name {
+                    @include set-sizes($height: 308px);
+
+                    .banner_name_first {
+                        @include set-responsive-typography(66.37px, 96px);
+                        margin-left: 32.67px;
+                    }
+
+                    .banner_name_second {
+                        @include set-responsive-typography(185.05px, .73);
+                        left: -1px;
+                    }
+                }
+            }
+        }
+
+        /* CTA */
+
+        .cta_container {
+            .cta_background {
+                .cta_heading {
+                    @include set-responsive-typography(51.2px, 67px);
+                }
+
+                .cta_brief {
+                    @include set-typography(small-2, regular, white);
+                    @include set-sizes(184px);
+                    right: 20px;
+                    bottom: 31.56px;
+                }
+            }
+        }
+
+        /* OVERVIEW */
+
+        .overview_container {
+            gap: 7.11px;
+            padding: 35.56px 0;
+
+            .overview_titlebox {
+                @include set-sizes(264.53px);
+
+                .overview_titlebox_expander {
+                    gap: 30.07px;
+
+                    .overview_titlebox_expander_heading {
+                        @include set-typography(heading-2, semibold);
+                    }
+
+                    .overview_titlebox_expander_icon {
+                        @include set-sizes(21.34px);
+                    }
+                }
+            }
+
+            .overview_content {
+                .overview_content_text {
+                    @include set-typography(small-2, light);
+                }
+            }
+
+            .overview_social {
+                gap: 20.44px;
+                @include set-sizes(56.89px);
+
+                .overview_social_icon {
+                    @include set-sizes(23.46px);
+
+                    &:nth-child(2) {
+                        @include set-sizes(26.34px);
+                    }
+                }
+            }
+
+            .overview_copyright {
+                @include set-sizes(148.62px);
+
+                .overview_copyright_text {
+                    @include set-responsive-typography(18px, 23px);
+                    margin: 0;
+                }
+            }
+        }
+
+        .about_overview_container {
+            min-height: 215.11px;
+
+            .about-content-w {
+                @include set-sizes(659.91px);
+
+                .about-text-w {
+                    @include set-sizes(517.69px);
+                }
+            }
+        }
+
+        .projects_overview_container {
+            min-height: 167.11px;
+
+            .projects-content-w {
+                @include set-sizes(568.89px);
+
+                .projects-text-w {
+                    max-width: 497.78px;
+                }
+            }
+        }
+
+        .services_overview_container {
+            @include set-container-px(14.22px, 'margin');
+            height: 114.65px;
+        }
+
+        /* ABOUT */
+
+        .about_container {
+            @include set-container-px(14.22px);
+        }
+
+        /* PROJECTS */
+
+        .projects_container {
+            @include set-container-px(14.22px);
+
+            .project_cards {
+                background-size: cover;
+                padding: 26.48px 0 0;
+            }
+        }
+
+        /* CARD */
+
+        .card_container {
+            gap: 105.33px;
+
+            &:not(:last-child) {
+                border-width: .53px;
+            }
+
+            .card {
+                gap: 3.97px;
+                padding: 0 5.3px;
+
+                .card_info {
+                    .card_info_name {
+                        @include set-responsive-typography(10px, 1.4);
+                    }
+
+                    .card_info_year {
+                        @include set-responsive-typography(10px, 1.4);
+                    }
+                }
+            }
+        }
+
+        /* TOPIC */
+
+        .topic_background {
+            @include set-container-px(14.22px);
+
+            .topic_container {
+                @include set-sizes($height: 132.22px);
+
+                .topic_number {
+                    @include set-responsive-typography(11.38px, 1.32);
+                }
+
+                .topic_content {
+                    gap: 7.11px;
+
+                    .topic_content_title {
+                        @include set-responsive-typography(91.02px, 1.2966);
+                    }
+
+                    .topic_content_info {
+                        gap: 14.22px;
+
+                        .topic_content_info_paragraph {
+                            @include set-responsive-typography(11.38px, 1.32);
+                            max-width: 578.84px;
+                        }
+
+                        button {
+                            @include set-responsive-typography(14.22px, 1.268);
+                            padding: 3.56px 14.22px;
+                        }
+                    }
+                }
+
+                .topic_icon {
+                    @include set-sizes(21.33px);
+                    margin-right: 17.96px;
+                }
+            }
+        }
+
+        .topic_background_alt {
+            .topic_container_alt {
+                @include set-sizes($height: 295.82px);
+            }
+        }
+
+        /* CONTACT */
+
+        .contact_container {
+            height: 661px;
+
+            .contact_content {
+                gap: 7.11px;
+                @include set-sizes(544px);
+
+                .contact_content_heading {
+                    @include set-responsive-typography(68.27px, 1.4503);
+                }
+
+                button {
+                    @include set-responsive-typography(14.22px, 1.268);
+                    gap: 7.11px;
+                    padding: 11.41px 35.56px;
+                }
+            }
+
+            .contact_footer {
+                @include set-sizes($height: 46.44px);
+
+                .contact_footer_copy {
+                    @include set-responsive-typography(14.22px, 1);
+                }
+            }
+        }
+    }
+}

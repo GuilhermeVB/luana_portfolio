@@ -2,8 +2,8 @@
 @use '../../styles/config/responsivities' as *;
 
 .banner_container {
-    @include set-container-px();
     @include set-sizes($height: 984px);
+    @include set-container-px();
     padding-bottom: 20px;
 
     .banner_background {

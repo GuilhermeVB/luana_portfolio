@@ -1,7 +1,7 @@
 @use '../../styles/shared/variables' as *;
 
 @mixin responsive-laptop-large() {
-    @media (min-width: 1024px) and (max-width: 1440px) {
+    @media (min-width: 1025px) and (max-width: 1440px) {
 
         /* BANNER */
 
@@ -14,10 +14,12 @@
 
                     .banner_name_first {
                         @include set-responsive-typography(93.33px, 134.77px);
+                        margin-left: 45.74px;
                     }
 
                     .banner_name_second {
                         @include set-responsive-typography(260.22px, .73);
+                        left: -1px;
                     }
                 }
             }
@@ -83,7 +85,8 @@
 
         .projects_container {
             .project_cards {
-                padding-top: 37.23px;
+                background-size: cover;
+                padding: 37.23px 0 0;
             }
         }
 

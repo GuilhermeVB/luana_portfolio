@@ -24,7 +24,6 @@ $typography-sizes: (
     small-2: (12px, 15.6px)
 );
 
-
 @mixin set-typography($type, $weight: regular, $color: black) {
     $size-line: map-get($typography-sizes, $type);
     font-size: nth($size-line, 1);

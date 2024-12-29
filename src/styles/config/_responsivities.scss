@@ -1,5 +1,7 @@
 @use './laptop-large' as *;
+@use './laptop' as *;
 
 @mixin responsive-priority {
+    @include responsive-laptop();
     @include responsive-laptop-large();
 }

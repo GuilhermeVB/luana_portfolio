@@ -15,6 +15,16 @@
     @include set-color(black, border-color);
 }
 
+@mixin set-horizontal-line($use-container: false) {
+    .line_separator {
+        @if $use-container {
+            @include set-container-px('margin');
+        }
+
+        @include set-border('top');
+    }
+}
+
 @mixin set-button($padding-y, $padding-x) {
     border-radius: 200px;
     padding: $padding-y $padding-x;
@@ -47,6 +57,6 @@
 
 /* SPECIFICATIONS */
 
-@mixin set-container-px($property: 'padding') {
-    #{$property}: 0 20px;
+@mixin set-container-px($size: 20px, $property: 'padding') {
+    #{$property}: 0 $size;
 }

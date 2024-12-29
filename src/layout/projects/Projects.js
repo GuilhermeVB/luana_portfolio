@@ -15,9 +15,10 @@ export const Projects = () => {
             <ProfileOverView
                 title="Projects"
                 text={`Welcome to my project showcase! Here, creativity meets functionality through designs that are intuitive, visually striking, and purpose-driven. Each project reflects my dedication to crafting impactful solutions that elevate user experiences.\n
-                Feel free to explore and connect for future collaborations!`}
+                    Feel free to explore and connect for future collaborations!`}
                 copyRight
             />
+            <div className={styles.line_separator} />
             <div className={styles.project_cards}>
                 <Card imageData={[
                     { path: radioHead, name: "OK Computer", year: "2024" },
@@ -34,7 +35,7 @@ export const Projects = () => {
                 />
                 <Card imageData={[
                     { path: artemiaMoveis, name: "Artêmia Móveis", year: "2024" },
-                    { path: sugarFantasy, name: "Sugar Fanasy", year: "2022" }
+                    { path: sugarFantasy, name: "Sugar Fantasy", year: "2022" }
                 ]}
                 />
             </div>
