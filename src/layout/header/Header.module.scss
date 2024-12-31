@@ -5,7 +5,7 @@
     @include set-container-px();
 
     .header {
-        @include set-flex(space-between);
+        @include set-flex(space-between, center);
         padding: 20px 0;
 
         .header_logo {

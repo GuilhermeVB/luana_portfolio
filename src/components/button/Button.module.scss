@@ -1,7 +1,7 @@
 @use '../../styles/shared/variables' as *;
 
 .button_container {
-    @include set-flex($gap: 10px);
+    @include set-flex(center, center, 10px);
     @include set-typography(heading-4, semibold, white);
 
     &:hover {

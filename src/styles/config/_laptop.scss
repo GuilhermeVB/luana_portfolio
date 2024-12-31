@@ -1,7 +1,7 @@
 @use '../../styles/shared/variables' as *;
 
 @mixin responsive-laptop() {
-    @media (min-width: 745px) and (max-width: 1024px) {
+    @media (min-width: 769px) and (max-width: 1024px) {
 
         /* HEADER */
 
@@ -13,16 +13,14 @@
 
                 button {
                     padding: 3.56px 14.22px;
-                    margin-bottom: 3px;
                 }
             }
 
             .subheader {
-                @include set-flex(space-between);
                 padding: 7.11px 0;
 
                 .subheader_behance {
-                    @include set-flex($gap: 8.53px);
+                    gap: 8.53px;
 
                     .subheader_behance_icon {
                         @include set-sizes(8.54px);
