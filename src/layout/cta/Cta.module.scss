@@ -7,12 +7,13 @@
 
     .cta_background {
         @include set-relative();
-        @include set-background-image('../../assets/images/marfie_crisantemoq.png', center, contain, 100%);
+        @include set-background-image('../../assets/images/marfie_crisantemoq.png', bottom, contain, 100%);
         @include set-flex(center, center);
 
         .cta_heading {
             @include set-typography(large-3, semibold, white);
             @include set-typography-layout(uppercase, 1.91px);
+            text-align: center;
         }
 
         .cta_brief {

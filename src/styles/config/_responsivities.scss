@@ -1,8 +1,10 @@
 @use './laptop-large' as *;
 @use './laptop' as *;
 @use './tablet' as *;
+@use './mobile' as *;
 
 @mixin responsive-priority {
+    @include responsive-mobile();
     @include responsive-tablet();
     @include responsive-laptop();
     @include responsive-laptop-large();

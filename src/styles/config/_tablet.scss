@@ -1,7 +1,7 @@
 @use '../../styles/shared/variables' as *;
 
 @mixin responsive-tablet() {
-    @media (min-width: 391px) and (max-width: 768px) {
+    @media (min-width: 426px) and (max-width: 768px) {
 
         /* HEADER */
 
@@ -250,6 +250,8 @@
                 }
             }
         }
+
+        @include set-horizontal-line(true, 10.33px);
 
         .topic_background_alt {
             .topic_container_alt {

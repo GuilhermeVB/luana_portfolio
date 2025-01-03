@@ -15,10 +15,10 @@
     @include set-color(black, border-color);
 }
 
-@mixin set-horizontal-line($use-container: false) {
+@mixin set-horizontal-line($use-container: false, $size: 20px) {
     .line_separator {
         @if $use-container {
-            @include set-container-px('margin');
+            @include set-container-px($size, $property: 'margin');
         }
 
         @include set-border('top');

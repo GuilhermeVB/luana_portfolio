@@ -233,6 +233,8 @@
             }
         }
 
+        @include set-horizontal-line(true, 14.22px);
+
         .topic_background_alt {
             .topic_container_alt {
                 @include set-sizes($height: 295.82px);
