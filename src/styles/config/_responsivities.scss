@@ -1,3 +1,4 @@
+@use '../../styles/shared/variables' as *;
 @use './laptop-large' as *;
 @use './laptop' as *;
 @use './tablet' as *;
@@ -8,4 +9,102 @@
     @include responsive-tablet();
     @include responsive-laptop();
     @include responsive-laptop-large();
+
+    @include transitions();
+}
+
+@mixin transitions() {
+    @media (min-width: 1135px) and (max-width: 1532px) {
+        .banner_container {
+            @include set-sizes($height: 756px);
+
+            .banner_background {
+                .banner_name {
+                    @include set-sizes($height: 452px);
+
+                    .banner_name_first {
+                        @include set-responsive-typography(93.33px, 134.77px);
+                        margin-left: 45.74px;
+                    }
+
+                    .banner_name_second {
+                        @include set-responsive-typography(260.22px, .73);
+                        left: -1px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 809px) and (max-width: 1134px) {
+        .banner_container {
+            @include set-sizes($height: 537.6px);
+            @include set-container-px(14.22px);
+            padding-bottom: 14.22px;
+
+            .banner_background {
+                .banner_name {
+                    @include set-sizes($height: 308px);
+
+                    .banner_name_first {
+                        @include set-responsive-typography(66.37px, 96px);
+                        margin-left: 32.67px;
+                    }
+
+                    .banner_name_second {
+                        @include set-responsive-typography(185.05px, .73);
+                        left: -1px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 587px) and (max-width: 808px) {
+        .banner_container {
+            @include set-sizes($height: 390.6px);
+            @include set-container-px(10.33px);
+            padding-bottom: 10.33px;
+
+            .banner_background {
+                .banner_name {
+                    @include set-sizes($height: 233.53px);
+
+                    .banner_name_first {
+                        @include set-responsive-typography(48.22px, 1.5);
+                        margin-left: 23.73px;
+                    }
+
+                    .banner_name_second {
+                        @include set-responsive-typography(134.45px, .73);
+                        left: -1px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 586px) {
+        .banner_container {
+            @include set-sizes($height: 461px);
+            @include set-container-px(5px);
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            .banner_background {
+                .banner_name {
+
+                    .banner_name_first {
+                        @include set-responsive-typography(26px, 38px);
+                        margin-left: 12.8px;
+                    }
+
+                    .banner_name_second {
+                        @include set-responsive-typography(72.49px, .72);
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
 }

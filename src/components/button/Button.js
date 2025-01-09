@@ -3,11 +3,16 @@ import styles from './Button.module.scss';
 
 export const Button = ({ text, buttonType, logo }) => {
   return (
-    <button className={`${styles.button_container} ${styles[`${buttonType}`]}`}>
+    <a
+      className={`${styles.button_container} ${styles[`${buttonType}`]}`}
+      href="https://mail.google.com/mail/u/1/#inbox?compose=CllgCJNvvhsPrbdDhkCgFbvLxsVHcWsJXsCVZqZDtLJjCHznNlSLzbBzjCdJgntHgFhFxLZWPmL"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {text}
       {logo && (
         <LogoIcon className={styles.button_icon} />
       )}
-    </button>
+    </a>
   );
 }

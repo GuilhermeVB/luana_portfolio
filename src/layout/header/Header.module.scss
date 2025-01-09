@@ -24,6 +24,7 @@
 
     .subheader {
         @include set-flex(space-between);
+        @include set-border('top');
         padding: 10px 0;
 
         .subheader_text {
@@ -32,6 +33,7 @@
 
         .subheader_behance {
             @include set-flex($align: center, $gap: 12px);
+            text-decoration: none;
 
             &:hover {
                 cursor: pointer;
@@ -43,10 +45,6 @@
             }
         }
     }
-
-    /* LINE */
-
-    @include set-horizontal-line();
 }
 
 /* RESPONSIVENESS */

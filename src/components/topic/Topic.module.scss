@@ -11,7 +11,7 @@
         transition: .5s ease-in-out;
 
         &:hover {
-            cursor: pointer;
+            cursor: default;
         }
 
         .topic_number {
@@ -45,6 +45,10 @@
             margin-right: 25.26px;
             transform: rotate(45deg);
             transition: .5s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 }
@@ -61,10 +65,6 @@
 
 .topic_background_alt {
     @include set-background-image('../../assets/images/chrysanthemum.jpg', center, cover, 100%, .7);
-
-    &:hover {
-        cursor: pointer;
-    }
 
     .topic_container_alt {
         @include set-sizes($height: 415px);

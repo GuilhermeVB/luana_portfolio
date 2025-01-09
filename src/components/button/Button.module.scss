@@ -3,6 +3,7 @@
 .button_container {
     @include set-flex(center, center, 10px);
     @include set-typography(heading-4, semibold, white);
+    text-decoration: none;
 
     &:hover {
         cursor: pointer;

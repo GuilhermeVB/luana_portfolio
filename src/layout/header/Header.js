@@ -16,17 +16,21 @@ export const Header = () => {
         </div>
         <Button text="Get in touch" buttonType="b-black" />
       </div>
-      <div className={styles.line_separator} />
       <div className={styles.subheader}>
         <span className={styles.subheader_text}>
           UX/UI Designer
         </span>
-        <div className={styles.subheader_behance}>
+        <a
+          className={styles.subheader_behance}
+          href="https://www.behance.net/luanaalmeida512"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <span className={styles.subheader_text}>
             Behance
           </span>
           <BehanceArrowIcon className={styles.subheader_behance_icon} />
-        </div>
+        </a>
       </div>
     </header>
   );

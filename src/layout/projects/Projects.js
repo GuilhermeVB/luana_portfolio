@@ -18,7 +18,6 @@ export const Projects = () => {
                     Feel free to explore and connect for future collaborations!`}
                 copyRight
             />
-            <div className={styles.line_separator} />
             <div className={styles.project_cards}>
                 <Card imageData={[
                     { path: radioHead, name: "OK Computer", year: "2024" },

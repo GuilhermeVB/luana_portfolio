@@ -31,8 +31,16 @@ export const ProfileOverView = ({ title, borderRight, text, socialMedia, copyRig
             {
                 socialMedia && (
                     <div className={styles.overview_social}>
-                        {socialMedia.map((IconComponent, index) => (
-                            <IconComponent className={styles.overview_social_icon} key={index} />
+                        {socialMedia.map((socialMediaComponent, index) => (
+                            <a
+                                key={index}
+                                className={styles.overview_social_link}
+                                href={socialMediaComponent.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <socialMediaComponent.icon className={styles.overview_social_icon} />
+                            </a>
                         ))}
                     </div>
                 )
