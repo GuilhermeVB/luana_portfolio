@@ -9,10 +9,7 @@
         @include set-flex(space-between, center);
         @include set-sizes($height: 186px);
         transition: .5s ease-in-out;
-
-        &:hover {
-            cursor: default;
-        }
+        cursor: default;
 
         .topic_number {
             @include set-typography(heading-5, semibold);
@@ -45,20 +42,17 @@
             margin-right: 25.26px;
             transform: rotate(45deg);
             transition: .5s ease-in-out;
-
-            &:hover {
-                cursor: pointer;
-            }
+            cursor: pointer;
         }
     }
 }
 
 /* LINE */
 
-@include set-horizontal-line(true);
+@include set-horizontal-line();
 
 .border-hidden {
-    border: none;
+    border: none !important;
 }
 
 /* DROPDOWN */

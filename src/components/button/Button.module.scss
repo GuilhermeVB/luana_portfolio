@@ -4,10 +4,7 @@
     @include set-flex(center, center, 10px);
     @include set-typography(heading-4, semibold, white);
     text-decoration: none;
-
-    &:hover {
-        cursor: pointer;
-    }
+    cursor: pointer;
 
     .button_icon {
         @include set-sizes(30.06px);

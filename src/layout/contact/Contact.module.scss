@@ -2,9 +2,18 @@
 @use '../../styles/config/responsivities' as *;
 
 .contact_container {
-    @include set-background-image('../../assets/images/white_flower.png', left, cover, 977px);
+    @include set-sizes($height: 977px);
     @include set-color(black, background-color);
     @include set-flex($flow: column);
+    position: relative;
+    overflow: hidden;
+
+    .contact_flower {
+        @include set-background-image('../../assets/images/white_flower.png', center, cover);
+        @include set-sizes(35.15625%, 100%);
+        position: absolute;
+        transform: scale(1);
+    }
 
     .contact_content {
         @include set-flex(center, center, 10px, column);

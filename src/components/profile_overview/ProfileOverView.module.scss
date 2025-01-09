@@ -38,16 +38,17 @@
         @include set-border('left');
         @include set-sizes(80px);
 
-        .overview_social_icon {
-            @include set-sizes(33px);
-            @include set-color(black);
+        .overview_social_link {
+            display: flex;
 
-            &:nth-child(2) {
-                @include set-sizes(37px);
-            }
-
-            &:hover {
+            .overview_social_icon {
+                @include set-sizes(33px);
+                @include set-color(black);
                 cursor: pointer;
+
+                &:nth-child(2) {
+                    @include set-sizes(37px);
+                }
             }
         }
     }

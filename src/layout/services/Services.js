@@ -45,36 +45,23 @@ export const Services = () => {
 
     function switchStatus(index) {
         setTopics(prevState => {
-            const newState = prevState.map((topic, i) => {
-                if (i === index) {
-                    const updatedTopic = { ...topic, isActive: !topic.isActive };
-                    return updatedTopic;
-                } else {
-                    const updatedTopic = { ...topic, isActive: false }
-                    return updatedTopic;
-                }
-            });
-            return newState;
-        });
-
-        setTopics(prevState => {
             let nextState = false;
-            const newState = prevState.map((topic) => {
-                if (topic.isActive) {
+            return prevState.map((topic, i) => {
+                // Primeiro, atualiza o status de "isActive"
+                const updatedTopic = { ...topic, isActive: i === index ? !topic.isActive : false };
+
+                // Em seguida, ajusta o status de "lineHidden" baseado em "isActive"
+                if (updatedTopic.isActive) {
                     nextState = true;
-                    const updatedTopic = { ...topic, lineHidden: true };
-                    return updatedTopic;
+                    return { ...updatedTopic, lineHidden: true };
                 } else if (nextState) {
                     nextState = false;
-                    const updatedTopic = { ...topic, lineHidden: true };
-                    return updatedTopic;
+                    return { ...updatedTopic, lineHidden: true };
                 } else {
-                    const updatedTopic = { ...topic, lineHidden: false };
-                    return updatedTopic;
+                    return { ...updatedTopic, lineHidden: false };
                 }
-            })
-            return newState;
-        })
+            });
+        });
     }
 
     return (

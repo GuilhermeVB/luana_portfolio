@@ -142,13 +142,16 @@
                 gap: 16.44px;
                 padding: 14.27px 0;
 
-                .overview_social_icon {
-                    @include set-sizes(23.47px);
+                .overview_social_link {
+                    .overview_social_icon {
+                        @include set-sizes(23.47px);
 
-                    &:nth-child(2) {
-                        @include set-sizes(26.32px);
+                        &:nth-child(2) {
+                            @include set-sizes(26.32px);
+                        }
                     }
                 }
+
             }
 
             .overview_copyright {
@@ -295,7 +298,7 @@
             }
         }
 
-        @include set-horizontal-line(true, 5px);
+        @include set-horizontal-line(.71px, 5px);
 
         .topic_background_alt {
             .topic_container_alt {

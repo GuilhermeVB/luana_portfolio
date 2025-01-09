@@ -102,11 +102,13 @@
                 gap: 20.44px;
                 @include set-sizes(56.89px);
 
-                .overview_social_icon {
-                    @include set-sizes(23.46px);
+                .overview_social_link {
+                    .overview_social_icon {
+                        @include set-sizes(23.46px);
 
-                    &:nth-child(2) {
-                        @include set-sizes(26.34px);
+                        &:nth-child(2) {
+                            @include set-sizes(26.34px);
+                        }
                     }
                 }
             }
@@ -233,7 +235,7 @@
             }
         }
 
-        @include set-horizontal-line(true, 14.22px);
+        @include set-horizontal-line(.71px, 14.2px);
 
         .topic_background_alt {
             .topic_container_alt {
