@@ -118,6 +118,12 @@
         /* CONTACT */
 
         .contact_container {
+            .contact_flower {
+                @include set-sizes(45%, 100%);
+                top: 0;
+                transform: scale(1);
+            }
+
             .contact_content {
                 @include set-sizes(765px);
 

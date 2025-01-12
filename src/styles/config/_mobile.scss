@@ -311,6 +311,15 @@
         .contact_container {
             height: 694.04px;
 
+            .contact_flower {
+                @include set-background-image('../../assets/images/white_flower.png', center right, cover);
+                @include set-sizes(100%, 100%);
+                top: 30%;
+                left: 50%;
+                transform: scale(1);
+                transform: translate(-50%)
+            }
+
             .contact_content {
                 @include set-sizes(auto);
                 gap: 7.11px;

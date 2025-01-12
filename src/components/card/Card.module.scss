@@ -9,6 +9,10 @@
         @include set-border('right');
     }
 
+    &:first-child .card:first-child .card_image {
+        /* Blur */
+    }
+
     .card {
         @include set-flex(space-between, $gap: 7.5px, $flow: column);
         @include set-sizes(100%);

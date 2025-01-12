@@ -248,6 +248,12 @@
         .contact_container {
             height: 661px;
 
+            .contact_flower {
+                @include set-sizes(44%, 100%);
+                top: 1%;
+                transform: scale(1.08);
+            }
+
             .contact_content {
                 gap: 7.11px;
                 @include set-sizes(544px);
