@@ -5,7 +5,7 @@
     @include set-sizes($height: 977px);
     @include set-color(black, background-color);
     @include set-flex($flow: column);
-    position: relative;
+    @include set-relative();
     overflow: hidden;
 
     .contact_flower {

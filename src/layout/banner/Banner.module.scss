@@ -13,7 +13,7 @@
             @include set-flex($justify: end, $flow: column);
             @include set-sizes($height: 568px);
             @include set-color(white, background-color);
-            mix-blend-mode: screen;
+            mix-blend-mode: lighten;
 
             .banner_name_first {
                 @include set-typography-merienda();

@@ -42,7 +42,7 @@ $typography-sizes: (
 
 @mixin set-typography-layout($transform: none, $stroke: 0) {
     text-transform: $transform;
-    -webkit-text-stroke: $stroke;
+    -webkit-text-stroke: $stroke white;
 }
 
 @mixin set-responsive-typography($size, $height) {
