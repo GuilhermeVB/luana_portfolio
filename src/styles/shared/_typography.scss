@@ -40,9 +40,10 @@ $typography-sizes: (
     @include set-color($color);
 }
 
-@mixin set-typography-layout($transform: none, $stroke: 0) {
+@mixin set-typography-layout($transform: none, $width: 0) {
     text-transform: $transform;
-    -webkit-text-stroke: $stroke white;
+    -webkit-text-stroke-width: $width;
+    -webkit-text-stroke-color: white;
 }
 
 @mixin set-responsive-typography($size, $height) {

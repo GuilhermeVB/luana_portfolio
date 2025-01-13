@@ -57,8 +57,11 @@
 
         .cta_container {
             .cta_background {
+                background-size: 78%;
+
                 .cta_heading {
                     @include set-responsive-typography(51.2px, 67px);
+                    -webkit-text-stroke-width: 1.36px;
                 }
 
                 .cta_brief {

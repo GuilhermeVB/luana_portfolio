@@ -76,13 +76,16 @@
 
         .cta_container {
             .cta_background {
-                background-size: cover;
+                background-size: 160%;
                 align-items: start;
 
                 .cta_heading {
                     @include set-responsive-typography(40px, 52px);
+                    -webkit-text-stroke-width: 1.36px;
                     max-width: 264px;
-                    margin-top: 97.22px;
+                    height: fit-content;
+                    top: 97.22px;
+                    transform: translate(50%, 0);
                 }
 
                 .cta_brief {

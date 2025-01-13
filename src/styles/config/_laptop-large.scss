@@ -29,6 +29,8 @@
 
         .cta_container {
             .cta_background {
+                background-size: 78%;
+
                 .cta_heading {
                     @include set-responsive-typography(72px, 93.6px);
                 }
