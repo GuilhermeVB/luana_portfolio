@@ -23,8 +23,8 @@ export const ProfileOverView = ({ title, borderRight, text, socialMedia, copyRig
                     toggleActions: "play none reverse none"
                 },
                 opacity: 0,
-                y: "100vh",
-                duration: 1
+                y: "50vh",
+                duration: .5
             })
         }
     }, [])

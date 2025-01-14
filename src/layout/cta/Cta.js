@@ -14,9 +14,10 @@ export const Cta = () => {
         gsap.timeline({
             scrollTrigger: {
                 trigger: backgroundRef.current,
-                start: "center 60%",
-                end: "center 60%",
-                toggleActions: "play none reverse none"
+                start: "bottom bottom",
+                end: "bottom top",
+                pin: true,
+                scrub: 3
             }
         })
             .from(`.${styles.cta_heading}`, {
@@ -27,8 +28,7 @@ export const Cta = () => {
                 opacity: 0,
                 duration: 1
             })
-
-    }, { scope: backgroundRef })
+    }, [])
 
     return (
         <section className={styles.cta_container}>

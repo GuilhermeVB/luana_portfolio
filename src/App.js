@@ -10,10 +10,10 @@ import './styles/global/App.scss';
 export const App = () => {
   return (
     <div className="App">
-      
       <Header />
       <Banner />
       <Cta />
+      <div className='transparent' />
       <About />
       <Projects />
       <Services />
