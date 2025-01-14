@@ -4,6 +4,7 @@
 .about_container {
     @include set-flex($flow: column);
     @include set-container-px();
+    overflow: hidden;
 }
 
 /* RESPONSIVENESS */

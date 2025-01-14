@@ -4,6 +4,12 @@
 .projects_container {
     @include set-flex($flow: column);
     @include set-container-px();
+    overflow: hidden;
+
+    .projects_animation_container {
+        @include set-flex();
+        overflow: hidden;
+    }
 
     .project_cards {
         @include set-background-image('../../assets/images/projects.png', center, 90.6% 100%, fit-content);

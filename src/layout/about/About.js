@@ -3,6 +3,7 @@ import { ReactComponent as BehanceIcon } from '../../assets/icons/behance.svg';
 import { ReactComponent as InstagramIcon } from '../../assets/icons/instagram.svg';
 
 import { ProfileOverView } from '../../components/profile_overview/ProfileOverView';
+
 import styles from './About.module.scss';
 
 export const About = () => {
@@ -27,6 +28,7 @@ export const About = () => {
                         link: "https://www.instagram.com/luanauxdesigner/"
                     }
                 ]}
+                mainSectionStylesContainer={styles.about_container}
             />
         </section>
     );
