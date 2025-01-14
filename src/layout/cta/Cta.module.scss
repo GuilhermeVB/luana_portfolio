@@ -9,6 +9,7 @@
         @include set-relative();
         @include set-background-image('../../assets/images/marfie_crisantemoq.png', bottom, contain, 100%);
         @include set-flex(center, center);
+        overflow: hidden;
         mix-blend-mode: lighten;
 
         .cta_heading {
