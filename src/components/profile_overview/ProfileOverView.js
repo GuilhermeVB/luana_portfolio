@@ -20,8 +20,7 @@ export const ProfileOverView = ({ title, borderRight, text, socialMedia, copyRig
                     trigger: `.${mainSectionStylesContainer}`,
                     start: "bottom bottom",
                     end: "bottom bottom",
-                    toggleActions: "play none reverse none",
-                    markers: true
+                    toggleActions: "play none reverse none"
                 },
                 opacity: 0,
                 y: "100vh",
