@@ -7,6 +7,7 @@
 
     .projects_animation_container {
         @include set-flex();
+        overflow: hidden;
     }
 
     .project_cards {
