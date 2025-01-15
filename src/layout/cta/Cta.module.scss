@@ -3,13 +3,12 @@
 
 .cta_container {
     @include set-color(black, background-color);
-    @include set-sizes($height: 100vh);
+    @include set-sizes(100%, 100vh);
 
     .cta_background {
         @include set-relative();
         @include set-background-image('../../assets/images/marfie_crisantemoq.png', bottom, contain, 100%);
         @include set-flex(center, center);
-        overflow: hidden;
         mix-blend-mode: lighten;
 
         .cta_heading {

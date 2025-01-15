@@ -4,11 +4,9 @@
 .projects_container {
     @include set-flex($flow: column);
     @include set-container-px();
-    overflow: hidden;
 
     .projects_animation_container {
         @include set-flex();
-        overflow: hidden;
     }
 
     .project_cards {

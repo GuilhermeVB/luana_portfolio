@@ -28,7 +28,6 @@ export const About = () => {
                         link: "https://www.instagram.com/luanauxdesigner/"
                     }
                 ]}
-                mainSectionStylesContainer={styles.about_container}
             />
         </section>
     );

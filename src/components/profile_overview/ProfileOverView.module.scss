@@ -3,6 +3,7 @@
 
 .overview_container {
     @include set-flex(space-between, $gap: 10px);
+    @include set-sizes(100%);
     padding: 50px 0;
 
     .overview_titlebox {
@@ -92,7 +93,8 @@
 }
 
 .services_overview_container {
-    @include set-container-px(20px, 'margin');
+    padding-left: 20px;
+    padding-right: 20px;
     height: 162px;
 }
 

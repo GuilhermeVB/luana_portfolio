@@ -1,36 +1,10 @@
 import { ReactComponent as DropDownIcon } from '../../assets/icons/drop_down.svg';
-
 import React from 'react';
-import { useRef } from 'react';
-import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import gsap from 'gsap';
-
 import styles from './ProfileOverView.module.scss';
 
-gsap.registerPlugin(ScrollTrigger);
-
-export const ProfileOverView = ({ title, borderRight, text, socialMedia, copyRight, mainSectionStylesContainer }) => {
-    const overviewRef = useRef(null);
-
-    useGSAP(() => {
-        if (mainSectionStylesContainer) {
-            gsap.from(overviewRef.current, {
-                scrollTrigger: {
-                    trigger: `.${mainSectionStylesContainer}`,
-                    start: "bottom bottom",
-                    end: "bottom bottom",
-                    toggleActions: "play none reverse none"
-                },
-                opacity: 0,
-                y: "50vh",
-                duration: .5
-            })
-        }
-    }, [])
-
+export const ProfileOverView = ({ title, borderRight, text, socialMedia, copyRight }) => {
     return (
-        <section className={`${styles.overview_container} ${styles[`${title.toLowerCase()}_overview_container`]}`} ref={overviewRef}>
+        <section className={`${styles.overview_container} ${styles[`${title.toLowerCase()}_overview_container`]}`} >
             <div className={`${styles.overview_titlebox} ${borderRight && styles['border-r']}`}>
                 <div className={styles.overview_titlebox_expander}>
                     <h2 className={styles.overview_titlebox_expander_heading}>

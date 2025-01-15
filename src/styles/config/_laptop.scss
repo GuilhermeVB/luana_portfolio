@@ -151,7 +151,8 @@
         }
 
         .services_overview_container {
-            @include set-container-px(14.22px, 'margin');
+            padding-left: 14.22px;
+            padding-right: 14.22px;
             height: 114.65px;
         }
 

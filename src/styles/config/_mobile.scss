@@ -196,8 +196,7 @@
         }
 
         .services_overview_container {
-            @include set-container-px(5px, 'margin');
-            padding: 26px 0;
+            padding: 26px 5px;
             height: auto;
         }
 
