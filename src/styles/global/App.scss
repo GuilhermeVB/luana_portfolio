@@ -10,9 +10,4 @@
 
 body {
     @include set-color(white, background-color);
-
-    .transparent {
-        @include set-sizes(100%, 100vh);
-        @include set-color(black, background-color);
-    }
 }

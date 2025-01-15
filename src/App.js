@@ -13,7 +13,6 @@ export const App = () => {
       <Header />
       <Banner />
       <Cta />
-      <div className='transparent' />
       <About />
       <Projects />
       <Services />

@@ -7,12 +7,12 @@ import styles from './Cta.module.scss';
 gsap.registerPlugin(ScrollTrigger);
 
 export const Cta = () => {
-    const backgroundRef = useRef(null);
+    const containerRef = useRef(null);
 
     useGSAP(() => {
         gsap.timeline({
             scrollTrigger: {
-                trigger: backgroundRef.current,
+                trigger: containerRef.current,
                 start: "bottom bottom",
                 end: "bottom top",
                 pin: true,
@@ -30,8 +30,8 @@ export const Cta = () => {
     }, [])
 
     return (
-        <section className={styles.cta_container}>
-            <div className={styles.cta_background} ref={backgroundRef}>
+        <section className={styles.cta_container} ref={containerRef}>
+            <div className={styles.cta_background}>
                 <h1 className={`${styles.cta_heading} ${styles.cta_heading_filled}`}>
                     Design empowers experiences
                 </h1>
