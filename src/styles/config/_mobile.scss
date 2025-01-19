@@ -230,18 +230,6 @@
                 border: none;
             }
 
-            &:nth-child(2) .card_assets_link_image {
-                object-position: top;
-            }
-
-            &:nth-child(3) .card_assets_link_image {
-                object-position: bottom;
-            }
-
-            &:nth-child(4) .card:last-child .card_assets_link_image {
-                object-position: bottom;
-            }
-
             &:nth-child(4) .card:first-child .card_assets_link_image {
                 object-position: top;
             }
