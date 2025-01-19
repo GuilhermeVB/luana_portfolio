@@ -11,26 +11,28 @@ import styles from './ProfileOverView.module.scss';
 gsap.registerPlugin(ScrollTrigger);
 
 export const ProfileOverView = ({ title, borderRight, text, socialMedia, copyRight, mainSectionStylesContainer }) => {
-    const overviewRef = useRef(null);
+    const containerRef = useRef(null);
 
     useGSAP(() => {
         if (mainSectionStylesContainer) {
-            gsap.from(overviewRef.current, {
-                scrollTrigger: {
-                    trigger: `.${mainSectionStylesContainer}`,
-                    start: "bottom bottom",
-                    end: "top top",
-                    toggleActions: "play none none reverse"
-                },
+            const st = {
+                trigger: `.${mainSectionStylesContainer}`,
+                start: "bottom bottom",
+                end: "top top",
+                toggleActions: "play none none none"
+            }
+
+            gsap.from(containerRef.current, {
+                scrollTrigger: st,
+                y: "100%",
                 opacity: 0,
-                y: "50vh",
-                duration: .5
+                duration: 1
             })
         }
     }, [])
 
     return (
-        <section className={`${styles.overview_container} ${styles[`${title.toLowerCase()}_overview_container`]}`} ref={overviewRef}>
+        <section className={`${styles.overview_container} ${styles[`${title.toLowerCase()}_overview_container`]}`} ref={containerRef}>
             <div className={`${styles.overview_titlebox} ${borderRight && styles['border-r']}`}>
                 <div className={styles.overview_titlebox_expander}>
                     <h2 className={styles.overview_titlebox_expander_heading}>

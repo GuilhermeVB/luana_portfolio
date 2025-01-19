@@ -5,7 +5,25 @@ export const Card = ({ imageData, firstVerticalAlign, secondVerticalAlign }) => 
         <div className={styles.card_container}>
             {imageData.map((data, index) => (
                 <figure className={`${styles.card} ${firstVerticalAlign && styles['card-first-mt']} ${secondVerticalAlign && styles['card-second-mt']}`} key={index}>
-                    <img className={styles.card_image} src={data.path} alt="" />
+                    <div className={styles.card_assets}>
+                        <a
+                            className={styles.card_assets_link}
+                            href={data.imageLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img className={styles.card_assets_link_image} src={data.path} alt="" />
+                        </a>
+                        {
+                            data.name === "" ? (
+                                <div className={styles.card_assets_hidden}>
+                                    <img className={styles.card_assets_hidden_image} src={data.path} alt="" />
+                                    <img className={styles.card_assets_hidden_image} src={data.path} alt="" />
+                                    <img className={styles.card_assets_hidden_image} src={data.path} alt="" />
+                                </div>
+                            ) : null
+                        }
+                    </div>
                     <figcaption className={styles.card_info}>
                         <span className={styles.card_info_name}>
                             {data.name}

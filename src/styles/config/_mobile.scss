@@ -230,14 +230,30 @@
                 border: none;
             }
 
+            &:nth-child(2) .card_assets_link_image {
+                object-position: top;
+            }
+
+            &:nth-child(3) .card_assets_link_image {
+                object-position: bottom;
+            }
+
+            &:nth-child(4) .card:last-child .card_assets_link_image {
+                object-position: bottom;
+            }
+
+            &:nth-child(4) .card:first-child .card_assets_link_image {
+                object-position: top;
+            }
+
             .card {
                 gap: 3.97px;
                 padding: 0;
 
-                .card_image {
+                .card_assets {
                     @include set-sizes(100%, 139px);
-                    object-fit: cover;
                 }
+
 
                 .card_info {
                     .card_info_name {

@@ -1,4 +1,5 @@
 import artemiaMoveis from '../../assets/images/artemia_moveis.jpg';
+import developerPortfolio from '../../assets/images/developer_portfolio.jpg';
 import natureBeauty from '../../assets/images/nature_beauty.jpg';
 import radioHead from '../../assets/images/radiohead.jpg';
 import signalis from '../../assets/images/signalis.jpg';
@@ -23,21 +24,21 @@ export const Projects = () => {
             </div>
             <div className={styles.project_cards}>
                 <Card imageData={[
-                    { path: radioHead, name: "OK Computer", year: "2024" },
-                    { path: tattoArtist, name: "Tatto Artist", year: "2023" }
+                    { path: radioHead, name: "OK Computer", year: "2024", imageLink: "https://www.behance.net/gallery/212982157/Landing-Page-Ok-Computer-Radiohead" },
+                    { path: tattoArtist, name: "Tatto Artist", year: "2023", imageLink: "https://www.behance.net/gallery/189251413/Tatto-Artist-Landing-Page" }
                 ]}
                 />
                 <Card imageData={[
-                    { path: natureBeauty, name: "Nature Beauty", year: "2023" }
+                    { path: natureBeauty, name: "Nature Beauty", year: "2023", imageLink: "https://www.behance.net/gallery/189111609/Nature-Beauty-Website-E-commerce" }
                 ]} firstVerticalAlign
                 />
                 <Card imageData={[
-                    { path: signalis, name: "Signalis", year: "2023" }
+                    { path: signalis, name: "Signalis", year: "2023", imageLink: "https://www.behance.net/gallery/189753903/Signalis-Landing-Page" }
                 ]} secondVerticalAlign
                 />
                 <Card imageData={[
-                    { path: artemiaMoveis, name: "Artêmia Móveis", year: "2024" },
-                    { path: sugarFantasy, name: "Sugar Fantasy", year: "2022" }
+                    { path: developerPortfolio, name: "Developer Portfolio", year: "2025", imageLink: "https://www.behance.net/gallery/217030377/Developer-Portfolio-Landing-Page" },
+                    { path: sugarFantasy, name: "Sugar Fantasy", year: "2022", imageLink: "https://www.behance.net/gallery/189215813/Sugar-Fantasy-Landing-Page/modules/1070062589" }
                 ]}
                 />
             </div>
