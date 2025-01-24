@@ -11,13 +11,15 @@ import './styles/global/App.scss';
 export const App = () => {
   return (
     <div className="App">
-      <Header />
-      <Banner />
-      <Cta />
-      <About />
-      <Projects />
-      <Services />
-      <Contact />
+      <SmoothScroll>
+        <Header />
+        <Banner />
+        <Cta />
+        <About />
+        <Projects />
+        <Services />
+        <Contact />
+      </SmoothScroll>
     </div >
   );
 }
