@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from 'gsap';
 import styles from './Cta.module.scss';
 
@@ -10,20 +10,20 @@ export const Cta = () => {
     const containerRef = useRef(null);
 
     useGSAP(() => {
-        const st = {
+        const tl = gsap.timeline({ defaults: { ease: "none" } })
+            .from(`.${styles.cta_heading}`, { y: "100vh" })
+            .from(`.${styles.cta_brief}`, { opacity: 0 })
+
+        ScrollTrigger.create({
             trigger: containerRef.current,
+            scroller: ".scroll-container",
             start: "bottom bottom",
             end: "bottom top",
             pin: true,
-            scrub: 3
-        }
-
-        const tl = gsap.timeline({ scrollTrigger: st })
-
-        tl
-            .from(`.${styles.cta_heading}`, { y: "100vh" })
-            .from(`.${styles.cta_brief}`, { opacity: 0 })
-    }, { scope: containerRef })
+            scrub: 3,
+            animation: tl
+        })
+    }, [])
 
     return (
         <section className={styles.cta_container} ref={containerRef}>

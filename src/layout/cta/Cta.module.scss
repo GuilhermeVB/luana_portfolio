@@ -2,8 +2,11 @@
 @use '../../styles/config/responsivities' as *;
 
 .cta_container {
+    @include set-flex();
     @include set-color(black, background-color);
-    @include set-sizes(100%, 100vh);
+    @include set-sizes(100% !important, 100vh !important);
+    max-width: none !important;
+    max-height: none !important;
 
     .cta_background {
         @include set-relative();

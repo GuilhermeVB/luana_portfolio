@@ -15,21 +15,22 @@ export const ProfileOverView = ({ title, borderRight, text, socialMedia, copyRig
 
     useGSAP(() => {
         if (mainSectionStylesContainer) {
-            const st = {
-                trigger: `.${mainSectionStylesContainer}`,
-                start: "bottom bottom",
-                end: "top top",
-                toggleActions: "play none none none"
-            }
-
-            gsap.from(containerRef.current, {
-                scrollTrigger: st,
+            const slide = gsap.from(containerRef.current, {
                 y: "100%",
                 opacity: 0,
                 duration: 1
             })
+
+            ScrollTrigger.create({
+                trigger: `.${mainSectionStylesContainer}`,
+                scroller: ".scroll-container",
+                start: "bottom bottom",
+                end: "top top",
+                toggleActions: "play none none none",
+                animation: slide
+            })
         }
-    }, [])
+    }, [mainSectionStylesContainer])
 
     return (
         <section className={`${styles.overview_container} ${styles[`${title.toLowerCase()}_overview_container`]}`} ref={containerRef}>

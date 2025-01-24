@@ -5,9 +5,23 @@
     border: 0;
     margin: 0;
     padding: 0;
-    font-family: 'IBM Plex Mono', monospace;
 }
 
 body {
     @include set-color(white, background-color);
+    font-family: 'IBM Plex Mono', monospace;
+    overflow: hidden;
+
+    .scroll-container {
+        height: 100vh;
+
+        .scrollbar-track-y {
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+
+        .scrollbar-thumb-y {
+            background-color: #888;
+        }
+    }
 }

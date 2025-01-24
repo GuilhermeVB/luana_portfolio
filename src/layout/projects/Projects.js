@@ -1,4 +1,3 @@
-import artemiaMoveis from '../../assets/images/artemia_moveis.jpg';
 import developerPortfolio from '../../assets/images/developer_portfolio.jpg';
 import natureBeauty from '../../assets/images/nature_beauty.jpg';
 import radioHead from '../../assets/images/radiohead.jpg';
