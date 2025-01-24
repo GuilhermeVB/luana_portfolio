@@ -1,9 +1,6 @@
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import Scrollbar from "smooth-scrollbar";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export const SmoothScroll = ({ children }) => {
     const scrollRef = useRef(null);

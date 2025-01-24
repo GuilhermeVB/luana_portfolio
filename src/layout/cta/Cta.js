@@ -19,6 +19,7 @@ export const Cta = () => {
             scroller: ".scroll-container",
             start: "bottom bottom",
             end: "bottom top",
+            markers: true,
             pin: true,
             scrub: 3,
             animation: tl
