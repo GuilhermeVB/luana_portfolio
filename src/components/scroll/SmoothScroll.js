@@ -29,6 +29,7 @@ export const SmoothScroll = ({ children }) => {
         });
 
         scroller.addListener(ScrollTrigger.update);
+        ScrollTrigger.refresh();
     }, [scrollRef]);
 
     return (
