@@ -23,7 +23,6 @@ export const ProfileOverView = ({ title, borderRight, text, socialMedia, copyRig
 
             ScrollTrigger.create({
                 trigger: `.${mainSectionStylesContainer}`,
-                scroller: ".scroll-container",
                 start: "bottom bottom",
                 end: "top top",
                 toggleActions: "play none none none",
