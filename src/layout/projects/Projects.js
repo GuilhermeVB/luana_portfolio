@@ -3,7 +3,7 @@ import natureBeauty from '../../assets/images/nature_beauty.jpg';
 import radioHead from '../../assets/images/radiohead.jpg';
 import signalis from '../../assets/images/signalis.jpg';
 import sugarFantasy from '../../assets/images/sugar_fantasy.jpg';
-import tattoArtist from '../../assets/images/tatto_artist.jpg';
+import greecGuideTrip from '../../assets/images/greece_guide_trip.jpg'
 
 import { Card } from '../../components/card/Card';
 import { ProfileOverView } from '../../components/profile_overview/ProfileOverView';
@@ -24,7 +24,7 @@ export const Projects = () => {
             <div className={styles.project_cards}>
                 <Card imageData={[
                     { path: radioHead, name: "OK Computer", year: "2024", imageLink: "https://www.behance.net/gallery/212982157/Landing-Page-Ok-Computer-Radiohead" },
-                    { path: tattoArtist, name: "Tatto Artist", year: "2023", imageLink: "https://www.behance.net/gallery/189251413/Tatto-Artist-Landing-Page" }
+                    { path: greecGuideTrip, name: "Greece Guide Trip", year: "2025", imageLink: "https://www.behance.net/gallery/217771201/Landing-Page-Greece-Guide-Trip" }
                 ]}
                 />
                 <Card imageData={[
