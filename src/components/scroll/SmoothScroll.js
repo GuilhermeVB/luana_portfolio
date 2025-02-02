@@ -1,3 +1,4 @@
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
 import Scrollbar from "smooth-scrollbar";
@@ -27,6 +28,14 @@ export const SmoothScroll = ({ children }) => {
                 };
             }
         });
+
+        if (document.querySelector('.gsap-marker-scroller-start')) {
+            const markers = gsap.utils.toArray('[class *= "gsap-marker"]');
+
+            scroller.addListener(({ offset }) => {
+                gsap.set(markers, { marginTop: -offset.y })
+            });
+        }
 
         scroller.addListener(ScrollTrigger.update);
     }, [scrollRef]);
