@@ -29,6 +29,9 @@ export const SmoothScroll = ({ children }) => {
             }
         });
 
+
+        scroller.addListener(ScrollTrigger.update);
+
         if (document.querySelector('.gsap-marker-scroller-start')) {
             const markers = gsap.utils.toArray('[class *= "gsap-marker"]');
 
@@ -36,8 +39,6 @@ export const SmoothScroll = ({ children }) => {
                 gsap.set(markers, { marginTop: -offset.y })
             });
         }
-
-        scroller.addListener(ScrollTrigger.update);
     }, [scrollRef]);
 
     return (
