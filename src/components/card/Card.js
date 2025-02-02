@@ -12,17 +12,18 @@ export const Card = ({ imageData, firstVerticalAlign, secondVerticalAlign }) => 
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <img className={styles.card_assets_link_image} src={data.path} alt="" />
+                            <img className={styles.card_assets_link_image} src={data.path} alt={data.name} />
+                            {
+                                data.name === "OK Computer" ? (
+                                    <div className={styles.card_assets_link_hidden}>
+                                        <img className={styles.card_assets_link_hidden_image} src={data.path} alt="" />
+                                        <img className={styles.card_assets_link_hidden_image} src={data.path} alt="" />
+                                        <img className={styles.card_assets_link_hidden_image} src={data.path} alt="" />
+                                        <img className={styles.card_assets_link_hidden_image} src={data.path} alt="" />
+                                    </div>
+                                ) : null
+                            }
                         </a>
-                        {
-                            data.name === "" ? (
-                                <div className={styles.card_assets_hidden}>
-                                    <img className={styles.card_assets_hidden_image} src={data.path} alt="" />
-                                    <img className={styles.card_assets_hidden_image} src={data.path} alt="" />
-                                    <img className={styles.card_assets_hidden_image} src={data.path} alt="" />
-                                </div>
-                            ) : null
-                        }
                     </div>
                     <figcaption className={styles.card_info}>
                         <span className={styles.card_info_name}>

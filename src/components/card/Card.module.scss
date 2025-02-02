@@ -11,52 +11,59 @@
 
     .card {
         @include set-flex(space-between, $gap: 7.5px, $flow: column);
-        @include set-sizes(100%);
         padding: 0 10px;
 
         .card_assets {
             @include set-relative();
             @include set-flex();
-            @include set-sizes(100%);
-
-            &:hover .card_assets_hidden {
-                display: block;
-            }
 
             .card_assets_link {
                 @include set-flex();
                 @include set-sizes(100%);
 
+                &:hover .card_assets_link_hidden {
+                    opacity: 1;
+                }
+
                 .card_assets_link_image {
                     @include set-sizes(100%);
                     object-fit: cover;
                 }
+
+                .card_assets_link_hidden {
+                    opacity: 0;
+                    transition: .5s ease-in-out;
+
+                    .card_assets_link_hidden_image {
+                        @include set-absolute(50%, 50%);
+                        transform: translate(50%, 50%);
+                        object-fit: cover;
+                    }
+
+                    .card_assets_link_hidden_image:nth-child(1) {
+                        @include set-sizes(100%);
+                        filter: blur(4px);
+                        z-index: 1;
+                    }
+
+                    .card_assets_link_hidden_image:nth-child(2) {
+                        @include set-sizes(86.7%);
+                        filter: blur(4px);
+                        z-index: 1;
+                    }
+
+                    .card_assets_link_hidden_image:nth-child(3) {
+                        @include set-sizes(78%);
+                        filter: blur(4px);
+                        z-index: 2;
+                    }
+
+                    .card_assets_link_hidden_image:nth-child(4) {
+                        @include set-sizes(72%);
+                        z-index: 3;
+                    }
+                }
             }
-
-
-            .card_assets_hidden {
-                .card_assets_hidden_image {
-                    @include set-absolute(50%, 50%);
-                    transform: translate(50%, 50%);
-                    object-fit: cover;
-                }
-
-                .card_assets_hidden_image:nth-child(0) {
-                    @include set-sizes(75.82%);
-                    z-index: 1;
-                }
-
-                .card_assets_hidden_image:nth-child(1) {
-                    @include set-sizes(71%);
-                    z-index: 2;
-                }
-
-                .card_assets_hidden_image:nth-child(2) {
-                    @include set-sizes(55%);
-                    z-index: 3;
-                }
-            }
-
         }
 
         .card_info {
