@@ -8,8 +8,6 @@ import gsap from 'gsap';
 
 import styles from './ProfileOverView.module.scss';
 
-gsap.registerPlugin(ScrollTrigger);
-
 export const ProfileOverView = ({ title, borderRight, text, socialMedia, copyRight, mainSectionStylesContainer }) => {
     const containerRef = useRef(null);
 

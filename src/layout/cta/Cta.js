@@ -4,8 +4,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from 'gsap';
 import styles from './Cta.module.scss';
 
-gsap.registerPlugin(ScrollTrigger);
-
 export const Cta = () => {
     const containerRef = useRef(null);
 

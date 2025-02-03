@@ -3,6 +3,8 @@ import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
 import Scrollbar from "smooth-scrollbar";
 
+gsap.registerPlugin(ScrollTrigger)
+
 const scrollerOptions = {
     damping: 0.1
 }
@@ -13,15 +15,11 @@ export const SmoothScroll = ({ children }) => {
     useEffect(() => {
         const scroller = Scrollbar.init(scrollRef.current, scrollerOptions);
 
-        console.log("Registrando scrollerProxy...");
-
         ScrollTrigger.scrollerProxy(scrollRef.current, {
             scrollTop(value) {
                 if (arguments.length) {
-                    console.log("Setando scroll para:", value);
                     scroller.scrollTop = value;
                 }
-                console.log("Obtendo scroll:", scroller.scrollTop);
                 return scroller.scrollTop;
             }
         });
