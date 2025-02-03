@@ -42,25 +42,22 @@
 
                     .card_assets_link_hidden_image:nth-child(1) {
                         @include set-sizes(100%);
-                        filter: blur(4px);
                         z-index: 1;
                     }
 
                     .card_assets_link_hidden_image:nth-child(2) {
                         @include set-sizes(86.7%);
-                        filter: blur(4px);
-                        z-index: 1;
+                        z-index: 2;
                     }
 
                     .card_assets_link_hidden_image:nth-child(3) {
                         @include set-sizes(78%);
-                        filter: blur(4px);
-                        z-index: 2;
+                        z-index: 3;
                     }
 
                     .card_assets_link_hidden_image:nth-child(4) {
                         @include set-sizes(72%);
-                        z-index: 3;
+                        z-index: 4;
                     }
                 }
             }

@@ -24,11 +24,11 @@ export const Projects = () => {
             <div className={styles.project_cards}>
                 <Card imageData={[
                     { path: radioHead, name: "OK Computer", year: "2024", imageLink: "https://www.behance.net/gallery/212982157/Landing-Page-Ok-Computer-Radiohead" },
-                    { path: greecGuideTrip, name: "Greece Guide Trip", year: "2025", imageLink: "https://www.behance.net/gallery/217771201/Landing-Page-Greece-Guide-Trip" }
+                    { path: natureBeauty, name: "Nature Beauty", year: "2023", imageLink: "https://www.behance.net/gallery/189111609/Nature-Beauty-Website-E-commerce" }
                 ]}
                 />
                 <Card imageData={[
-                    { path: natureBeauty, name: "Nature Beauty", year: "2023", imageLink: "https://www.behance.net/gallery/189111609/Nature-Beauty-Website-E-commerce" }
+                    { path: greecGuideTrip, name: "Greece Guide Trip", year: "2025", imageLink: "https://www.behance.net/gallery/217771201/Landing-Page-Greece-Guide-Trip" }
                 ]} firstVerticalAlign
                 />
                 <Card imageData={[
