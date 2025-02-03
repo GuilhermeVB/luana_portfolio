@@ -7,27 +7,20 @@
     padding: 0;
 }
 
-html {
-    overflow: hidden;
+body {
+    @include set-color(white, background-color);
+    font-family: 'IBM Plex Mono', monospace;
 
-    body {
-        @include set-color(white, background-color);
-        font-family: 'IBM Plex Mono', monospace;
-        overflow: hidden;
-        height: 100%;
+    .scroll-container {
+        height: 100vh;
 
-        .scroll-container {
-            height: 100vh;
-            overflow: hidden;
+        .scrollbar-track-y {
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
 
-            .scrollbar-track-y {
-                background-color: rgba(0, 0, 0, 0.1);
-                border-radius: 4px;
-            }
-
-            .scrollbar-thumb-y {
-                background-color: #888;
-            }
+        .scrollbar-thumb-y {
+            background-color: #888;
         }
     }
 }

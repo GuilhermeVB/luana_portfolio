@@ -13,11 +13,15 @@ export const SmoothScroll = ({ children }) => {
     useEffect(() => {
         const scroller = Scrollbar.init(scrollRef.current, scrollerOptions);
 
+        console.log("Registrando scrollerProxy...");
+
         ScrollTrigger.scrollerProxy(scrollRef.current, {
             scrollTop(value) {
                 if (arguments.length) {
+                    console.log("Setando scroll para:", value);
                     scroller.scrollTop = value;
                 }
+                console.log("Obtendo scroll:", scroller.scrollTop);
                 return scroller.scrollTop;
             }
         });
@@ -31,7 +35,7 @@ export const SmoothScroll = ({ children }) => {
                 gsap.set(markers, { marginTop: -offset.y })
             });
         }
-    }, []);
+    }, [scrollRef]);
 
     return (
         <div className="scroll-container" ref={scrollRef}>
