@@ -3,14 +3,15 @@ import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
 import Scrollbar from "smooth-scrollbar";
 
+const scrollerOptions = {
+    damping: 0.1
+}
+
 export const SmoothScroll = ({ children }) => {
     const scrollRef = useRef(null);
 
     useEffect(() => {
-        const scroller = Scrollbar.init(scrollRef.current, {
-            damping: 0.1,
-            delegateTo: document
-        });
+        const scroller = Scrollbar.init(scrollRef.current, scrollerOptions);
 
         ScrollTrigger.scrollerProxy(scrollRef.current, {
             scrollTop(value) {
@@ -18,17 +19,8 @@ export const SmoothScroll = ({ children }) => {
                     scroller.scrollTop = value;
                 }
                 return scroller.scrollTop;
-            },
-            getBoundingClientRect() {
-                return {
-                    top: 0,
-                    left: 0,
-                    width: window.innerWidth,
-                    height: window.innerHeight,
-                };
             }
         });
-
 
         scroller.addListener(ScrollTrigger.update);
 
@@ -39,7 +31,7 @@ export const SmoothScroll = ({ children }) => {
                 gsap.set(markers, { marginTop: -offset.y })
             });
         }
-    }, [scrollRef]);
+    }, []);
 
     return (
         <div className="scroll-container" ref={scrollRef}>
