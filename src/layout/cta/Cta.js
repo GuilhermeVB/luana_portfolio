@@ -14,7 +14,6 @@ export const Cta = () => {
 
         ScrollTrigger.create({
             trigger: containerRef.current,
-            scroller: ".scroll-container",
             start: "bottom bottom",
             end: "bottom top",
             markers: true,
