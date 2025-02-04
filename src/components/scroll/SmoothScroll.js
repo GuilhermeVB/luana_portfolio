@@ -1,38 +1,36 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import LocomotiveScroll from "locomotive-scroll";
 import { useEffect, useRef } from "react";
-import Scrollbar from "smooth-scrollbar";
 
 gsap.registerPlugin(ScrollTrigger)
-
-const scrollerOptions = {
-    damping: 0.1
-}
 
 export const SmoothScroll = ({ children }) => {
     const scrollRef = useRef(null);
 
     useEffect(() => {
-        const scroller = Scrollbar.init(scrollRef.current, scrollerOptions);
+        const scroller = new LocomotiveScroll({
+            el: scrollRef.current,
+            smooth: true
+        })
+
+        scroller.on("scroll", ScrollTrigger.update);
 
         ScrollTrigger.scrollerProxy(scrollRef.current, {
             scrollTop(value) {
-                if (arguments.length) {
-                    scroller.scrollTop = value;
-                }
-                return scroller.scrollTop;
-            }
+                return arguments.length ? scroller.scrollTo(value, { duration: 0, disableLerp: true }) : scroller.scroll.instance.scroll.y;
+            },
+            getBoundingClientRect() {
+                return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+            },
+
+            pinType: scrollRef.current.style.transform ? "transform" : "fixed"
         });
 
-        scroller.addListener(ScrollTrigger.update);
+        ScrollTrigger.addEventListener("refresh", () => scroller.update());
+        ScrollTrigger.defaults({ scroller: scrollRef.current });
 
-        if (document.querySelector('.gsap-marker-scroller-start')) {
-            const markers = gsap.utils.toArray('[class *= "gsap-marker"]');
-
-            scroller.addListener(({ offset }) => {
-                gsap.set(markers, { marginTop: -offset.y })
-            });
-        }
+        ScrollTrigger.refresh();
     }, [scrollRef]);
 
     return (

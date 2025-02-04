@@ -7,20 +7,22 @@
     padding: 0;
 }
 
-body {
-    @include set-color(white, background-color);
-    font-family: 'IBM Plex Mono', monospace;
+html {
+    overflow: hidden;
+    height: 100%;
 
-    .scroll-container {
-        height: 100vh;
+    body {
+        @include set-color(white, background-color);
+        font-family: 'IBM Plex Mono', monospace;
+        overflow: hidden;
+        height: 100%;
 
-        .scrollbar-track-y {
-            background-color: rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-        }
+        .scroll-container {
+            overflow: hidden;
 
-        .scrollbar-thumb-y {
-            background-color: #888;
+            .pin-spacer {
+                width: 100% !important;
+            }
         }
     }
 }
