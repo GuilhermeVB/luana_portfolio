@@ -21,6 +21,7 @@ html {
             overflow: hidden;
 
             .pin-spacer {
+                @include set-color(black, background-color);
                 width: 100% !important;
             }
         }
