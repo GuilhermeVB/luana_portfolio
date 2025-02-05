@@ -32,6 +32,13 @@ export const SmoothScroll = ({ children }) => {
         ScrollTrigger.defaults({ scroller: scrollRef.current });
 
         ScrollTrigger.refresh();
+
+        return () => {
+            if (scroller.current) {
+                scroller.current.destroy();
+                scroller.current = null;
+            }
+        };
     }, []);
 
     return (
