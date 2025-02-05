@@ -1,14 +1,15 @@
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import LocomotiveScroll from "locomotive-scroll";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger)
 
 export const SmoothScroll = ({ children }) => {
     const scrollRef = useRef(null);
 
-    useEffect(() => {
+    useGSAP(() => {
         const scroller = new LocomotiveScroll({
             el: scrollRef.current,
             smooth: true
@@ -29,7 +30,9 @@ export const SmoothScroll = ({ children }) => {
 
         ScrollTrigger.addEventListener("refresh", () => scroller.update());
         ScrollTrigger.defaults({ scroller: scrollRef.current });
-    }, [scrollRef]);
+
+        ScrollTrigger.refresh();
+    }, []);
 
     return (
         <div className="scroll-container" ref={scrollRef}>

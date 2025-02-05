@@ -21,8 +21,6 @@ export const Cta = () => {
             scrub: 3,
             animation: tl
         })
-
-        ScrollTrigger.refresh();
     }, [])
 
     return (
