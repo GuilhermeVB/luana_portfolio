@@ -27,6 +27,8 @@ export const ProfileOverView = ({ title, borderRight, text, socialMedia, copyRig
                 toggleActions: "play none none none",
                 animation: slide
             })
+
+            ScrollTrigger.refresh();
         }
     }, [mainSectionStylesContainer])
 

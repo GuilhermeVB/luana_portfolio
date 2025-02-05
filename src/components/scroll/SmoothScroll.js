@@ -14,8 +14,6 @@ export const SmoothScroll = ({ children }) => {
             smooth: true
         })
 
-        /*@preserve*/ 
-
         scroller.on("scroll", ScrollTrigger.update);
 
         ScrollTrigger.scrollerProxy(scrollRef.current, {
@@ -31,8 +29,6 @@ export const SmoothScroll = ({ children }) => {
 
         ScrollTrigger.addEventListener("refresh", () => scroller.update());
         ScrollTrigger.defaults({ scroller: scrollRef.current });
-
-        ScrollTrigger.refresh();
     }, [scrollRef]);
 
     return (
