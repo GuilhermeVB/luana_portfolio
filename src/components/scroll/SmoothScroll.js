@@ -15,11 +15,14 @@ export const SmoothScroll = ({ children }) => {
             delegateTo: document
         });
 
+        /* Ta Sendo ignorado na build por algum motivo */
+
         ScrollTrigger.scrollerProxy(scrollRef.current, {
             scrollTop(value) {
                 if (arguments.length) {
                     scroller.scrollTop = value;
                 }
+                console.log(scroller.scrollTop)
                 return scroller.scrollTop;
             }
         });
