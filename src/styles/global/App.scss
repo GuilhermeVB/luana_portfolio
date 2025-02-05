@@ -9,6 +9,7 @@
 
 body {
     @include set-color(white, background-color);
+    @include set-sizes(100%, 100%);
     font-family: 'IBM Plex Mono', monospace;
     overflow: hidden;
 
