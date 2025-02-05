@@ -10,8 +10,8 @@ import './styles/global/App.scss';
 
 export const App = () => {
   return (
-    <div className="App">
-      <SmoothScroll>
+    <SmoothScroll>
+      <div className="App">
         <Header />
         <Banner />
         <Cta />
@@ -19,7 +19,7 @@ export const App = () => {
         <Projects />
         <Services />
         <Contact />
-      </SmoothScroll>
-    </div >
+      </div >
+    </SmoothScroll>
   );
 }

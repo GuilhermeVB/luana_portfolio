@@ -24,8 +24,6 @@ export const SmoothScroll = ({ children }) => {
             }
         });
 
-        console.log("atualizar e padronizar")
-
         scroller.addListener(ScrollTrigger.update);
         ScrollTrigger.defaults({ scroller: scrollRef.current });
 
