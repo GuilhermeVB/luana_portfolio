@@ -17,12 +17,11 @@ export const SmoothScroll = ({ children }) => {
 
         /* Ta Sendo ignorado na build por algum motivo */
 
-        ScrollTrigger.scrollerProxy(scrollRef.current, {
+        ScrollTrigger.scrollerProxy(".scroll-container", {
             scrollTop(value) {
                 if (arguments.length) {
                     scroller.scrollTop = value;
                 }
-                console.log(scroller.scrollTop)
                 return scroller.scrollTop;
             }
         });
