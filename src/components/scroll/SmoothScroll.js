@@ -1,19 +1,19 @@
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-import { useEffect, useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
 import Scrollbar from "smooth-scrollbar";
 
 gsap.registerPlugin(ScrollTrigger)
 
-const scrollerOptions = {
-    damping: 0.1
-}
-
 export const SmoothScroll = ({ children }) => {
     const scrollRef = useRef(null);
 
-    useEffect(() => {
-        const scroller = Scrollbar.init(scrollRef.current, scrollerOptions);
+    useGSAP(() => {
+        const scroller = Scrollbar.init(scrollRef.current, {
+            damping: 0.1,
+            delegateTo: document
+        });
 
         ScrollTrigger.scrollerProxy(scrollRef.current, {
             scrollTop(value) {
@@ -25,6 +25,7 @@ export const SmoothScroll = ({ children }) => {
         });
 
         scroller.addListener(ScrollTrigger.update);
+        ScrollTrigger.defaults({ scroller: scrollRef.current });
 
         if (document.querySelector('.gsap-marker-scroller-start')) {
             const markers = gsap.utils.toArray('[class *= "gsap-marker"]');
@@ -33,7 +34,7 @@ export const SmoothScroll = ({ children }) => {
                 gsap.set(markers, { marginTop: -offset.y })
             });
         }
-    }, [scrollRef]);
+    }, []);
 
     return (
         <div className="scroll-container" ref={scrollRef}>
