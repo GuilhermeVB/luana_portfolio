@@ -30,15 +30,11 @@ export const SmoothScroll = ({ children }) => {
 
         ScrollTrigger.addEventListener("refresh", () => scroller.update());
         ScrollTrigger.defaults({ scroller: scrollRef.current });
-
         ScrollTrigger.refresh();
 
         return () => {
-            if (scroller.current) {
-                scroller.current.destroy();
-                scroller.current = null;
-            }
-        };
+            ScrollTrigger.scrollerProxy(scroller, null);
+        }
     }, []);
 
     return (
