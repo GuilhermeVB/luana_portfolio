@@ -16,7 +16,6 @@ export const Cta = () => {
             trigger: containerRef.current,
             start: "bottom bottom",
             end: "bottom top",
-            markers: true,
             pin: true,
             scrub: 3,
             animation: tl

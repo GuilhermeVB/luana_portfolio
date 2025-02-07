@@ -11,13 +11,13 @@ export const SmoothScroll = ({ children }) => {
 
     useGSAP(() => {
         const scroller = Scrollbar.init(scrollRef.current, {
-            damping: 0.1,
+            damping: 0.08,
             delegateTo: document
         });
 
         /* Ta Sendo ignorado na build por algum motivo */
 
-        ScrollTrigger.scrollerProxy(".scroll-container", {
+        ScrollTrigger.scrollerProxy(scrollRef.current, {
             scrollTop(value) {
                 if (arguments.length) {
                     scroller.scrollTop = value;
