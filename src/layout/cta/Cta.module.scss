@@ -16,11 +16,10 @@
         mix-blend-mode: lighten;
 
         .cta_heading {
-            @include set-absolute(50%, 50%);
+            @include set-absolute(auto, auto);
             @include set-typography(large-3, semibold, white);
             @include set-typography-layout(uppercase, 1.91px);
             @include set-sizes(100%);
-            transform: translate(50%, 50%);
             text-align: center;
         }
 

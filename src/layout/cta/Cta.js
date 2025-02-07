@@ -1,39 +1,62 @@
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { useGSAP } from '@gsap/react';
-import ScrollTrigger from "gsap/ScrollTrigger";
-import gsap from 'gsap';
 import styles from './Cta.module.scss';
 
+const motionTitle = {
+    hidden: {
+        y: "100vh"
+    },
+    visible: {
+        y: 0,
+        transition: {
+            duration: 1
+        }
+    }
+}
+
+const motionSpan = {
+    hidden: {
+        opacity: 0
+    },
+    visible: {
+        opacity: 1,
+        transition: {
+            duration: 1
+        }
+    }
+}
+
 export const Cta = () => {
-    const containerRef = useRef(null);
-
-    useGSAP(() => {
-        const tl = gsap.timeline({ defaults: { ease: "none" } })
-            .from(`.${styles.cta_heading}`, { y: "100vh" })
-            .from(`.${styles.cta_brief}`, { opacity: 0 })
-
-        ScrollTrigger.create({
-            trigger: containerRef.current,
-            start: "bottom bottom",
-            end: "bottom top",
-            pin: true,
-            scrub: 3,
-            animation: tl
-        })
-    }, [])
+    const backgroundRef = useRef(null)
+    const isInView = useInView(backgroundRef)
 
     return (
-        <section className={styles.cta_container} ref={containerRef}>
-            <div className={styles.cta_background}>
-                <h1 className={`${styles.cta_heading} ${styles.cta_heading_filled}`}>
+        <section className={styles.cta_container}>
+            <div ref={backgroundRef} className={styles.cta_background}>
+                <motion.h1
+                    className={`${styles.cta_heading} ${styles.cta_heading_filled}`}
+                    variants={motionTitle}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                >
                     Design empowers experiences
-                </h1>
-                <h1 className={`${styles.cta_heading} ${styles.cta_heading_outline}`}>
+                </motion.h1>
+                <motion.h1
+                    className={`${styles.cta_heading} ${styles.cta_heading_outline}`}
+                    variants={motionTitle}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                >
                     Design empowers experiences
-                </h1>
-                <span className={styles.cta_brief}>
+                </motion.h1>
+                <motion.span
+                    className={styles.cta_brief}
+                    variants={motionSpan}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                >
                     Committed to crafting intuitive, visually stunning, and highly functional interfaces.
-                </span>
+                </motion.span>
             </div>
         </section>
     );
