@@ -5,10 +5,14 @@ export const SmoothScroll = ({ children }) => {
     const scrollRef = useRef(null);
 
     useEffect(() => {
-        Scrollbar.init(scrollRef.current, {
+        const scrollbar = Scrollbar.init(scrollRef.current, {
             damping: 0.08,
             delegateTo: document
         });
+
+        return () => {
+            scrollbar.destroy();
+        };
     }, []);
 
     return (

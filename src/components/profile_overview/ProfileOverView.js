@@ -20,7 +20,7 @@ const motionSection = {
 
 export const ProfileOverView = ({ title, borderRight, text, socialMedia, copyRight, mainSectionStylesContainer }) => {
     const overviewRef = useRef(null)
-    const isInView = useInView(overviewRef)
+    const isInView = useInView(overviewRef, { once: true })
 
     return (
         <motion.section
@@ -28,7 +28,7 @@ export const ProfileOverView = ({ title, borderRight, text, socialMedia, copyRig
             className={`${styles.overview_container} ${styles[`${title.toLowerCase()}_overview_container`]}`}
             variants={mainSectionStylesContainer ? motionSection : null}
             initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
+            animate={isInView ? "visible" : null}
         >
             <div className={`${styles.overview_titlebox} ${borderRight && styles['border-r']}`}>
                 <div className={styles.overview_titlebox_expander}>

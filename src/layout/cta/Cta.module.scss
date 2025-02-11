@@ -4,16 +4,14 @@
 .cta_container {
     @include set-flex();
     @include set-color(black, background-color);
-    @include set-sizes(100% !important, 100vh !important);
-    max-width: none !important;
-    max-height: none !important;
+    @include set-sizes(100%, 200vh);
 
     .cta_background {
-        @include set-relative();
-        @include set-background-image('../../assets/images/marfie_crisantemoq.png', bottom, contain, 100%);
+        @include set-background-image('../../assets/images/marfie_crisantemoq.png', bottom, contain, 100vh);
         @include set-flex(center, center);
-        overflow: hidden;
         mix-blend-mode: lighten;
+        position: sticky;
+        top: 0;
 
         .cta_heading {
             @include set-absolute(auto, auto);

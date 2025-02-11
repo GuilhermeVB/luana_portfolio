@@ -1,5 +1,5 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import styles from './Cta.module.scss';
 
 const motionTitle = {
@@ -28,7 +28,8 @@ const motionSpan = {
 
 export const Cta = () => {
     const backgroundRef = useRef(null)
-    const isInView = useInView(backgroundRef)
+    const isInView = useInView(backgroundRef, { once: true, amount: "all" })
+    const [titleAnimationDone, setTitleAnimationDone] = useState(false)
 
     return (
         <section className={styles.cta_container}>
@@ -38,6 +39,7 @@ export const Cta = () => {
                     variants={motionTitle}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
+                    onAnimationComplete={() => { setTitleAnimationDone(isInView) }}
                 >
                     Design empowers experiences
                 </motion.h1>
@@ -53,7 +55,7 @@ export const Cta = () => {
                     className={styles.cta_brief}
                     variants={motionSpan}
                     initial="hidden"
-                    animate={isInView ? "visible" : "hidden"}
+                    animate={titleAnimationDone ? "visible" : "hidden"}
                 >
                     Committed to crafting intuitive, visually stunning, and highly functional interfaces.
                 </motion.span>
