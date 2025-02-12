@@ -3,6 +3,7 @@
 
 .cta_container {
     @include set-flex();
+    @include set-relative();
     @include set-color(black, background-color);
     @include set-sizes(100%, 200vh);
 
@@ -10,6 +11,7 @@
         @include set-background-image('../../assets/images/marfie_crisantemoq.png', bottom, contain, 100vh);
         @include set-flex(center, center);
         mix-blend-mode: lighten;
+        overflow: hidden;
         position: sticky;
         top: 0;
 

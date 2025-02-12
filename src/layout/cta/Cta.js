@@ -1,65 +1,49 @@
-import { motion, useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { motion, useMotionValueEvent, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import styles from './Cta.module.scss';
 
-const motionTitle = {
-    hidden: {
-        y: "100vh"
-    },
-    visible: {
-        y: 0,
-        transition: {
-            duration: 1
-        }
-    }
-}
-
-const motionSpan = {
-    hidden: {
-        opacity: 0
-    },
-    visible: {
-        opacity: 1,
-        transition: {
-            duration: 1
-        }
-    }
-}
-
 export const Cta = () => {
-    const backgroundRef = useRef(null)
-    const isInView = useInView(backgroundRef, { once: true, amount: "all" })
-    const [titleAnimationDone, setTitleAnimationDone] = useState(false)
+    const containerRef = useRef(null)
+    const { scrollYProgress } = useScroll({
+        target: containerRef
+    });
+
+    useMotionValueEvent(scrollYProgress, "change", (val) => { console.log(val) })
+
+    const y = useTransform(
+        scrollYProgress,
+        [0, .6],
+        [700, 0]
+    );
+
+    const opacity = useTransform(
+        scrollYProgress,
+        [.7, 1],
+        [0, 1]
+    )
 
     return (
-        <section className={styles.cta_container}>
-            <div ref={backgroundRef} className={styles.cta_background}>
+        <section className={styles.cta_container} ref={containerRef} >
+            <div className={styles.cta_background}>
                 <motion.h1
                     className={`${styles.cta_heading} ${styles.cta_heading_filled}`}
-                    variants={motionTitle}
-                    initial="hidden"
-                    animate={isInView ? "visible" : "hidden"}
-                    onAnimationComplete={() => { setTitleAnimationDone(isInView) }}
+                    style={{ y }}
                 >
                     Design empowers experiences
                 </motion.h1>
                 <motion.h1
                     className={`${styles.cta_heading} ${styles.cta_heading_outline}`}
-                    variants={motionTitle}
-                    initial="hidden"
-                    animate={isInView ? "visible" : "hidden"}
+                    style={{ y }}
                 >
                     Design empowers experiences
                 </motion.h1>
                 <motion.span
                     className={styles.cta_brief}
-                    variants={motionSpan}
-                    initial="hidden"
-                    animate={titleAnimationDone ? "visible" : "hidden"}
+                    style={{ opacity }}
                 >
                     Committed to crafting intuitive, visually stunning, and highly functional interfaces.
                 </motion.span>
             </div>
-        </section>
+        </section >
     );
 }

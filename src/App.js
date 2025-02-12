@@ -5,21 +5,18 @@ import { Cta } from './layout/cta/Cta';
 import { Header } from './layout/header/Header';
 import { Projects } from './layout/projects/Projects';
 import { Services } from './layout/services/Services';
-import { SmoothScroll } from './components/scroll/SmoothScroll';
 import './styles/global/App.scss';
 
 export const App = () => {
   return (
     <div className="App">
-      <SmoothScroll>
-        <Header />
-        <Banner />
-        <Cta />
-        <About />
-        <Projects />
-        <Services />
-        <Contact />
-      </SmoothScroll>
+      <Header />
+      <Banner />
+      <Cta />
+      <About />
+      <Projects />
+      <Services />
+      <Contact />
     </div >
   );
 }
