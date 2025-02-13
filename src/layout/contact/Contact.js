@@ -3,7 +3,7 @@ import styles from './Contact.module.scss';
 
 export const Contact = () => {
     return (
-        <section className={styles.contact_container}>
+        <section data-scroll-section className={styles.contact_container}>
             <div className={styles.contact_flower} />
             <div className={styles.contact_content}>
                 <h2 className={styles.contact_content_heading}>

@@ -65,7 +65,7 @@ export const Services = () => {
     }
 
     return (
-        <section className={styles.services_container}>
+        <section data-scroll-section className={styles.services_container}>
             <ProfileOverView title="Services" />
             <div className={styles.services_list}>
                 {topics.map((topic) => (

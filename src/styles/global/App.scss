@@ -10,10 +10,11 @@
 body {
     @include set-color(white, background-color);
     font-family: 'IBM Plex Mono', monospace;
-    /*overflow: hidden;*/
+    overflow: hidden;
+    height: 100%;
 
     .scroll-container {
-        height: 100vh;
+        overflow: hidden;
 
         .scrollbar-track-y {
             background-color: rgba(0, 0, 0, 0.1);

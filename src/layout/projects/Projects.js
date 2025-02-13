@@ -11,7 +11,7 @@ import styles from './Projects.module.scss';
 
 export const Projects = () => {
     return (
-        <section className={styles.projects_container}>
+        <section data-scroll-section className={styles.projects_container}>
             <div className={styles.projects_animation_container}>
                 <ProfileOverView
                     title="Projects"

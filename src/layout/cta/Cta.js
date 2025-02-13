@@ -1,29 +1,47 @@
-import { motion, useMotionValueEvent, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useMotionValue, useMotionValueEvent, useTransform } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 import styles from './Cta.module.scss';
 
-export const Cta = () => {
+export const Cta = ({ scroll }) => {
     const containerRef = useRef(null)
-    const { scrollYProgress } = useScroll({
-        target: containerRef
-    });
+    const scrollYProgress = useMotionValue(0);
+
+    useEffect(() => {
+        if (!scroll) return;
+
+        scroll.on("scroll", (args) => {
+            if (!containerRef.current) return;
+
+            const section = containerRef.current.getBoundingClientRect();
+            const scrollTop = args.scroll.y;
+            const start = section.top + scrollTop;
+            const end = section.bottom + scrollTop;
+            const progress = (scrollTop - start) / (end - start);
+
+            scrollYProgress.set(progress);
+        });
+    }, [scroll, scrollYProgress])
 
     useMotionValueEvent(scrollYProgress, "change", (val) => { console.log(val) })
 
     const y = useTransform(
         scrollYProgress,
-        [0, .6],
+        [0, .3],
         [700, 0]
     );
 
     const opacity = useTransform(
         scrollYProgress,
-        [.7, 1],
+        [.4, .5],
         [0, 1]
     )
 
     return (
-        <section className={styles.cta_container} ref={containerRef} >
+        <section
+            data-scroll-section
+            className={styles.cta_container}
+            ref={containerRef}
+        >
             <div className={styles.cta_background}>
                 <motion.h1
                     className={`${styles.cta_heading} ${styles.cta_heading_filled}`}

@@ -7,7 +7,7 @@ import styles from './About.module.scss';
 
 export const About = () => {
     return (
-        <section className={styles.about_container}>
+        <section data-scroll-section className={styles.about_container}>
             <ProfileOverView
                 title="About"
                 borderRight

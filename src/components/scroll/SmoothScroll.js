@@ -1,22 +1,25 @@
 import { useEffect, useRef } from "react";
-import Scrollbar from "smooth-scrollbar";
+import LocomotiveScroll from "locomotive-scroll"
 
-export const SmoothScroll = ({ children }) => {
+export const SmoothScroll = ({ children, setScroll }) => {
     const scrollRef = useRef(null);
 
     useEffect(() => {
-        const scrollbar = Scrollbar.init(scrollRef.current, {
-            damping: 0.08,
-            delegateTo: document
+        const scroll = new LocomotiveScroll({
+            el: scrollRef.current,
+            smooth: true,
+            lerp: 0.1,
         });
 
+        if (setScroll) setScroll(scroll)
+
         return () => {
-            scrollbar.destroy();
+            scroll.destroy();
         };
-    }, []);
+    }, [setScroll]);
 
     return (
-        <div className="scroll-container" ref={scrollRef}>
+        <div data-scroll-container className="scroll-container" ref={scrollRef}>
             {children}
         </div>
     );
