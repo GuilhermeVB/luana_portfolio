@@ -12,8 +12,6 @@
         @include set-flex(center, center);
         mix-blend-mode: lighten;
         overflow: hidden;
-        position: sticky;
-        top: 0;
 
         .cta_heading {
             @include set-absolute(auto, auto);

@@ -8,7 +8,7 @@ export const SmoothScroll = ({ children, setScroll }) => {
         const scroll = new LocomotiveScroll({
             el: scrollRef.current,
             smooth: true,
-            lerp: 0.1,
+            lerp: 0.08,
         });
 
         if (setScroll) setScroll(scroll)

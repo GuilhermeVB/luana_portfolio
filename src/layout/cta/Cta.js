@@ -24,6 +24,12 @@ export const Cta = ({ scroll }) => {
 
     useMotionValueEvent(scrollYProgress, "change", (val) => { console.log(val) })
 
+    const yBackground = useTransform(
+        scrollYProgress,
+        [0, .5],
+        [0, 966]
+    )
+
     const y = useTransform(
         scrollYProgress,
         [0, .3],
@@ -42,7 +48,7 @@ export const Cta = ({ scroll }) => {
             className={styles.cta_container}
             ref={containerRef}
         >
-            <div className={styles.cta_background}>
+            <motion.div className={styles.cta_background} style={{ y: yBackground }}>
                 <motion.h1
                     className={`${styles.cta_heading} ${styles.cta_heading_filled}`}
                     style={{ y }}
@@ -61,7 +67,7 @@ export const Cta = ({ scroll }) => {
                 >
                     Committed to crafting intuitive, visually stunning, and highly functional interfaces.
                 </motion.span>
-            </div>
+            </motion.div>
         </section >
     );
 }
