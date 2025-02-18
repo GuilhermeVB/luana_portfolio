@@ -27,7 +27,7 @@ export const Cta = ({ scroll }) => {
     const yBackground = useTransform(
         scrollYProgress,
         [0, .5],
-        [0, 966]
+        [0, window.innerHeight]
     )
 
     const y = useTransform(
