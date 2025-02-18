@@ -11,8 +11,4 @@ body {
     @include set-color(white, background-color);
     font-family: 'IBM Plex Mono', monospace;
     overflow: hidden;
-
-    .App {
-        height: 100%;
-    }
 }

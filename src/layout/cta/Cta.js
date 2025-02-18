@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useMotionValueEvent, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import styles from './Cta.module.scss';
 
@@ -28,10 +28,10 @@ export const Cta = ({ scroll }) => {
         [0, window.innerHeight]
     )
 
-    const y = useTransform(
+    const yTitle = useTransform(
         scrollYProgress,
         [0, .3],
-        [700, 0]
+        [window.innerHeight, 0]
     );
 
     const opacity = useTransform(
@@ -48,13 +48,13 @@ export const Cta = ({ scroll }) => {
             <motion.div className={styles.cta_background} style={{ y: yBackground }}>
                 <motion.h1
                     className={`${styles.cta_heading} ${styles.cta_heading_filled}`}
-                    style={{ y }}
+                    style={{ y: yTitle }}
                 >
                     Design empowers experiences
                 </motion.h1>
                 <motion.h1
                     className={`${styles.cta_heading} ${styles.cta_heading_outline}`}
-                    style={{ y }}
+                    style={{ y: yTitle }}
                 >
                     Design empowers experiences
                 </motion.h1>
