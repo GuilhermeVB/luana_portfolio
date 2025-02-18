@@ -6,7 +6,7 @@ import styles from './Header.module.scss';
 
 export const Header = () => {
   return (
-    <header data-scroll-section className={styles.header_container}>
+    <header className={styles.header_container}>
       <div className={styles.header}>
         <div className={styles.header_logo}>
           <LogoIcon className={styles.header_logo_icon} />

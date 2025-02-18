@@ -42,7 +42,6 @@ export const Cta = ({ scroll }) => {
 
     return (
         <section
-            data-scroll-section
             className={styles.cta_container}
             ref={containerRef}
         >
