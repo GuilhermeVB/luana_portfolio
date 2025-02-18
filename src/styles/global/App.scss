@@ -11,18 +11,8 @@ body {
     @include set-color(white, background-color);
     font-family: 'IBM Plex Mono', monospace;
     overflow: hidden;
-    height: 100%;
 
-    .scroll-container {
-        overflow: hidden;
-
-        .scrollbar-track-y {
-            background-color: rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-        }
-
-        .scrollbar-thumb-y {
-            background-color: #888;
-        }
+    .App {
+        height: 100%;
     }
 }

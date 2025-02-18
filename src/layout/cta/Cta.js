@@ -22,8 +22,6 @@ export const Cta = ({ scroll }) => {
         });
     }, [scroll, scrollYProgress])
 
-    useMotionValueEvent(scrollYProgress, "change", (val) => { console.log(val) })
-
     const yBackground = useTransform(
         scrollYProgress,
         [0, .5],
