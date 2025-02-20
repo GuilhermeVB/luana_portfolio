@@ -1,38 +1,35 @@
 import { ReactComponent as DropDownIcon } from '../../assets/icons/drop_down.svg';
 
-import React from 'react';
-import { useRef } from 'react';
-import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import gsap from 'gsap';
-
+import { motion, useInView } from 'framer-motion';
+import React, { useRef } from 'react';
 import styles from './ProfileOverView.module.scss';
 
-gsap.registerPlugin(ScrollTrigger);
+const motionSection = {
+    hidden: {
+        opacity: 0,
+        y: "100%"
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: .5
+        }
+    }
+}
 
 export const ProfileOverView = ({ title, borderRight, text, socialMedia, copyRight, mainSectionStylesContainer }) => {
-    const containerRef = useRef(null);
-
-    useGSAP(() => {
-        if (mainSectionStylesContainer) {
-            const slide = gsap.from(containerRef.current, {
-                y: "100%",
-                opacity: 0,
-                duration: 1
-            })
-
-            ScrollTrigger.create({
-                trigger: `.${mainSectionStylesContainer}`,
-                start: "bottom bottom",
-                end: "top top",
-                toggleActions: "play none none none",
-                animation: slide
-            })
-        }
-    }, [mainSectionStylesContainer])
+    const overviewRef = useRef(null)
+    const isInView = useInView(overviewRef, { once: true })
 
     return (
-        <section className={`${styles.overview_container} ${styles[`${title.toLowerCase()}_overview_container`]}`} ref={containerRef}>
+        <motion.section
+            ref={overviewRef}
+            className={`${styles.overview_container} ${styles[`${title.toLowerCase()}_overview_container`]}`}
+            variants={mainSectionStylesContainer ? motionSection : null}
+            initial="hidden"
+            animate={isInView ? "visible" : null}
+        >
             <div className={`${styles.overview_titlebox} ${borderRight && styles['border-r']}`}>
                 <div className={styles.overview_titlebox_expander}>
                     <h2 className={styles.overview_titlebox_expander_heading}>
@@ -81,6 +78,6 @@ export const ProfileOverView = ({ title, borderRight, text, socialMedia, copyRig
                     </div>
                 )
             }
-        </section>
+        </motion.section>
     );
 }

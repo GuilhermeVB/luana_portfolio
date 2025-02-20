@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { SmoothScroll } from './components/scroll/SmoothScroll';
 import { About } from './layout/about/About';
 import { Banner } from './layout/banner/Banner';
 import { Contact } from './layout/contact/Contact';
@@ -8,15 +10,19 @@ import { Services } from './layout/services/Services';
 import './styles/global/App.scss';
 
 export const App = () => {
+  const [scroll, setScroll] = useState(null);
+
   return (
     <div className="App">
-      <Header />
-      <Banner />
-      <Cta />
-      <About />
-      <Projects />
-      <Services />
-      <Contact />
+      <SmoothScroll setScroll={setScroll}>
+        <Header />
+        <Banner />
+        <Cta scroll={scroll} />
+        <About />
+        <Projects />
+        <Services />
+        <Contact />
+      </SmoothScroll>
     </div >
   );
 }

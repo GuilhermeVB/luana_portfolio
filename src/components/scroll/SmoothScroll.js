@@ -1,42 +1,33 @@
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
-import Scrollbar from "smooth-scrollbar";
+import LocomotiveScroll from "locomotive-scroll"
 
-gsap.registerPlugin(ScrollTrigger);
-
-export const SmoothScroll = ({ children }) => {
+export const SmoothScroll = ({ children, setScroll }) => {
     const scrollRef = useRef(null);
+    const isMobile = window.innerWidth <= 768;
 
     useEffect(() => {
-        const scroller = Scrollbar.init(scrollRef.current, {
-            damping: 0.1,
-            delegateTo: document
-        });
-
-        ScrollTrigger.scrollerProxy(scrollRef.current, {
-            scrollTop(value) {
-                if (arguments.length) {
-                    scroller.scrollTop = value;
-                }
-                return scroller.scrollTop;
+        const scroll = new LocomotiveScroll({
+            el: scrollRef.current,
+            smooth: true,
+            smartphone: {
+                smooth: true
             },
-            getBoundingClientRect() {
-                return {
-                    top: 0,
-                    left: 0,
-                    width: window.innerWidth,
-                    height: window.innerHeight,
-                };
-            }
+            tablet: {
+                smooth: true
+            },
+            lerp: 0.08,
+            
         });
 
-        scroller.addListener(ScrollTrigger.update);
-        ScrollTrigger.refresh();
-    }, [scrollRef]);
+        if (setScroll) setScroll(scroll)
+
+        return () => {
+            scroll.destroy();
+        };
+    }, [setScroll, isMobile]);
 
     return (
-        <div className="scroll-container" ref={scrollRef}>
+        <div data-scroll-container className="scroll-container" ref={scrollRef}>
             {children}
         </div>
     );
