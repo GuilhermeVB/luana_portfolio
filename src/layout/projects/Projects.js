@@ -29,6 +29,7 @@ const motionDiv = {
 export const Projects = () => {
     const projectCardsRef = useRef(null)
     const isInView = useInView(projectCardsRef)
+    const isMobile = window.innerWidth <= 425;
 
     return (
         <section className={styles.projects_container}>
@@ -45,7 +46,7 @@ export const Projects = () => {
                 ref={projectCardsRef}
                 className={styles.project_cards}
                 variants={motionDiv}
-                animate={isInView ? "start" : "restart"}
+                animate={isInView && !isMobile ? "start" : "restart"}
             >
                 <Card imageData={[
                     { path: radioHead, name: "OK Computer", year: "2024", imageLink: "https://www.behance.net/gallery/212982157/Landing-Page-Ok-Computer-Radiohead" },

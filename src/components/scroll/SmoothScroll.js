@@ -16,7 +16,6 @@ export const SmoothScroll = ({ children, setScroll }) => {
                 smooth: true
             },
             lerp: 0.08,
-            
         });
 
         if (setScroll) setScroll(scroll)
