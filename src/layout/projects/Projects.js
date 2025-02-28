@@ -5,11 +5,31 @@ import signalis from '../../assets/images/signalis.jpg';
 import sugarFantasy from '../../assets/images/sugar_fantasy.jpg';
 import greecGuideTrip from '../../assets/images/greece_guide_trip.jpg'
 
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+
 import { Card } from '../../components/card/Card';
 import { ProfileOverView } from '../../components/profile_overview/ProfileOverView';
 import styles from './Projects.module.scss';
 
+const motionDiv = {
+    restart: {
+        backgroundPosition: null
+    },
+    start: {
+        backgroundPosition: ["0% 100%", "0% -2500%"],
+        transition: {
+            repeat: Infinity,
+            duration: 100,
+            ease: "linear",
+        }
+    }
+}
+
 export const Projects = () => {
+    const projectCardsRef = useRef(null)
+    const isInView = useInView(projectCardsRef)
+
     return (
         <section className={styles.projects_container}>
             <div className={styles.projects_animation_container}>
@@ -21,7 +41,12 @@ export const Projects = () => {
                     mainSectionStylesContainer={styles.projects_animation_container}
                 />
             </div>
-            <div className={styles.project_cards}>
+            <motion.div
+                ref={projectCardsRef}
+                className={styles.project_cards}
+                variants={motionDiv}
+                animate={isInView ? "start" : "restart"}
+            >
                 <Card imageData={[
                     { path: radioHead, name: "OK Computer", year: "2024", imageLink: "https://www.behance.net/gallery/212982157/Landing-Page-Ok-Computer-Radiohead" },
                     { path: natureBeauty, name: "Nature Beauty", year: "2023", imageLink: "https://www.behance.net/gallery/189111609/Nature-Beauty-Website-E-commerce" }
@@ -40,7 +65,7 @@ export const Projects = () => {
                     { path: sugarFantasy, name: "Sugar Fantasy", year: "2022", imageLink: "https://www.behance.net/gallery/189215813/Sugar-Fantasy-Landing-Page/modules/1070062589" }
                 ]}
                 />
-            </div>
+            </motion.div>
         </section>
     );
 }
